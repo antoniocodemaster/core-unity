@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{20F04BA7-ED5D-4893-B649-038E41068BE5}|CoreUnity.WebAPI\\CoreUnity.WebAPI.csproj|c:\\users\\csolis\\desktop\\csolis\\desarrollo\\cesarsoftnica\\projects\\nicasoft\\coreunityproject\\core-unity\\coreunitybackend\\coreunity.webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{20F04BA7-ED5D-4893-B649-038E41068BE5}|CoreUnity.WebAPI\\CoreUnity.WebAPI.csproj|solutionrelative:coreunity.webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|c:\\users\\csolis\\desktop\\csolis\\desarrollo\\cesarsoftnica\\projects\\nicasoft\\coreunityproject\\core-unity\\coreunitybackend\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 204,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\CoreUnity.WebAPI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "CoreUnity.WebAPI\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\CoreUnity.WebAPI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "CoreUnity.WebAPI\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-16T17:24:25.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAE0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-04-16T17:06:40.046Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "m1jAGZX9ZRQKTx2TKLpziAYJfaPUYwN1lqZANuwOAfY=",
+  "Source": "CoreUnity.WebAPI",
+  "BasePath": "_content/CoreUnity.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

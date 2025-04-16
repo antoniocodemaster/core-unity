@@ -1,0 +1,6 @@
+@CoreUnity.WebAPI_HostAddress = http://localhost:5010
+
+GET {{CoreUnity.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
