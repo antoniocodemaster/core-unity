@@ -34,3 +34,4 @@ C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUn
 C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend\CoreUnity.WebAPI\obj\Debug\net8.0\CoreUnity.WebAPI.pdb
 C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend\CoreUnity.WebAPI\obj\Debug\net8.0\CoreUnity.WebAPI.genruntimeconfig.cache
 C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend\CoreUnity.WebAPI\obj\Debug\net8.0\ref\CoreUnity.WebAPI.dll
+C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend\CoreUnity.WebAPI\obj\Debug\net8.0\CoreUnity.WebAPI.sourcelink.json

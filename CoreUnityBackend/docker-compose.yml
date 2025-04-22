@@ -1,7 +1,7 @@
 services:
   redis:
     image: redis:latest
-    container_name: redis_session
+    container_name: redis_user_session
     restart: always
     ports:
      - "6379:6379"
@@ -53,6 +53,19 @@ services:
     volumes:
       - keycloak_data:/opt/keycloak/data
 
+  identity_db:
+    build:
+      context: ./docker_db/identity-db
+    container_name: identity_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+    ports:
+      - "5434:5432"
+    volumes:
+      - identity_db_data:/var/lib/postgresql/data
+
   coreunity.webapi:
     image: ${DOCKER_REGISTRY-}coreunitywebapi
     build:
@@ -79,4 +92,6 @@ volumes:
   keycloak_db_data:
     driver: local
   keycloak_data:
+    driver: local
+  identity_db_data:
     driver: local

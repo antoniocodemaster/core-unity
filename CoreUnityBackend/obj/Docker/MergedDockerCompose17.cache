@@ -1,0 +1,253 @@
+name: dockercompose8577800493023084647
+services:
+  coreunity.webapi:
+    build:
+      context: C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend
+      dockerfile: CoreUnity.WebAPI/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: CoreUnity.WebAPI
+      target: base
+    container_name: core_unity_webapi
+    depends_on:
+      keycloak:
+        condition: service_started
+        required: true
+      redis:
+        condition: service_healthy
+        required: true
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      KEYCLOAK_AUTH_URL: http://keycloak:8080/realms/core_unity_realm/protocol/openid-connect/token
+      NUGET_FALLBACK_PACKAGES: /.nuget/fallbackpackages;/.nuget/fallbackpackages2
+      REDIS_CONNECTION: redis:6379
+    image: coreunitywebapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages --additionalProbingPath /.nuget/fallbackpackages2  "/app/bin/Debug/net8.0/CoreUnity.WebAPI.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8081
+        published: "8081"
+        protocol: tcp
+      - mode: ingress
+        target: 8080
+        published: "8080"
+        protocol: tcp
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    restart: always
+    tty: true
+    volumes:
+      - type: bind
+        source: C:\Users\csolis\AppData\Roaming\Microsoft\UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\csolis\AppData\Roaming\Microsoft\UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\csolis\AppData\Roaming\ASP.NET\Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\csolis\AppData\Roaming\ASP.NET\Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend\CoreUnity.WebAPI
+        target: /app
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend
+        target: /src
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\csolis\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\csolis\.nuget\packages
+        target: /.nuget/packages
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages
+        target: /.nuget/fallbackpackages
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\DevExpress 22.2\Components\Offline Packages
+        target: /.nuget/fallbackpackages2
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
+        read_only: true
+        bind:
+          create_host_path: true
+  identity-db:
+    build:
+      context: C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend\postgres-custom
+      dockerfile: Dockerfile
+    container_name: identity_db
+    environment:
+      POSTGRES_PASSWORD: identity_secret
+      POSTGRES_USER: identity_admin
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5432
+        published: "5434"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: volume
+        source: identity_db_data
+        target: /var/lib/postgresql/data
+        volume: {}
+  keycloak:
+    command:
+      - start-dev
+    container_name: keycloak
+    depends_on:
+      keycloak-db:
+        condition: service_healthy
+        required: true
+    environment:
+      KC_DB: postgres
+      KC_DB_PASSWORD: mysecretpassword
+      KC_DB_URL: jdbc:postgresql://keycloak-db:5432/keycloak
+      KC_DB_USERNAME: keycloak
+      KC_HOSTNAME_STRICT: "false"
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    image: quay.io/keycloak/keycloak:23.0.1
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "8082"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: volume
+        source: keycloak_data
+        target: /opt/keycloak/data
+        volume: {}
+  keycloak-db:
+    container_name: keycloak_db
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_USER: keycloak
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U keycloak -d keycloak
+      timeout: 5s
+      interval: 10s
+      retries: 5
+    image: postgres:15
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5432
+        published: "5433"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: volume
+        source: keycloak_db_data
+        target: /var/lib/postgresql/data
+        volume: {}
+  redis:
+    command:
+      - redis-server
+      - --appendonly
+      - "yes"
+    container_name: redis_session
+    healthcheck:
+      test:
+        - CMD
+        - redis-cli
+        - ping
+      timeout: 5s
+      interval: 10s
+      retries: 3
+    image: redis:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 6379
+        published: "6379"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: volume
+        source: redis_data
+        target: /data
+        volume: {}
+networks:
+  default:
+    name: dockercompose8577800493023084647_default
+volumes:
+  identity_db_data:
+    name: dockercompose8577800493023084647_identity_db_data
+    driver: local
+  keycloak_data:
+    name: dockercompose8577800493023084647_keycloak_data
+    driver: local
+  keycloak_db_data:
+    name: dockercompose8577800493023084647_keycloak_db_data
+    driver: local
+  redis_data:
+    name: dockercompose8577800493023084647_redis_data
+    driver: local

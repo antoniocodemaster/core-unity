@@ -1,0 +1,26 @@
+# Ignorar archivos y carpetas de Visual Studio
+./CoreUnityBackend/.vs
+./CoreUnityBackend/.suo
+./CoreUnityBackend/.user
+./CoreUnityBackend/.userosscache
+./CoreUnityBackend/.sln.docstates
+
+# Ignorar archivos compilados
+./CoreUnityBackend/bin
+./CoreUnityBackend/obj
+./CoreUnityBackend/.exe
+./CoreUnityBackend/.dll
+./CoreUnityBackend/.pdb
+./CoreUnityBackend/.cache
+./CoreUnityBackend/.log
+
+# Ignorar archivos generados por .NET
+./CoreUnityBackend/apphost.exe
+./CoreUnityBackend/.db
+./CoreUnityBackend/.db-shm
+./CoreUnityBackend/.db-wal
+./CoreUnityBackend/.lock.json
+
+# Ignorar referencias temporales
+./CoreUnityBackend/ref
+./CoreUnityBackend/refint
