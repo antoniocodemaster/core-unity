@@ -1,0 +1,43 @@
+{
+    "realm": "core-unity",
+    "enabled": true,
+    "users": [
+        {
+            "username": "api.user",
+            "enabled": true,
+            "emailVerified": true,
+            "credentials": [
+                {
+                    "type": "password",
+                    "value": "UltraSecurePassword123!",
+                    "temporary": false
+                }
+            ]
+        }
+    ],
+    "clients": [
+        {
+            "clientId": "core-unity-api-client",
+            "name": "Core Unity API Client",
+            "enabled": true,
+            "protocol": "openid-connect",
+            "publicClient": false,
+            "secret": "SuperSecretClientKey!",
+            "standardFlowEnabled": false,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": true,
+            "serviceAccountsEnabled": false,
+            "authorizationServicesEnabled": false,
+            "redirectUris": [],
+            "webOrigins": [],
+            "attributes": {
+                "access.token.lifespan": "300",
+                "refresh.token.lifespan": "1800"
+            }
+        }
+    ],
+    "identityProviders": [],
+    "roles": {
+        "realm": []
+    }
+}

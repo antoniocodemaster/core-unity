@@ -7,12 +7,18 @@ WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
 
-
 # This stage is used to build the service project
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["CoreUnity.WebAPI/CoreUnity.WebAPI.csproj", "CoreUnity.WebAPI/"]
+COPY ../CoreUnity.WebAPI/CoreUnity.WebAPI.csproj CoreUnity.WebAPI/
+COPY ../MiRH.Core/MiRH.Core.csproj MiRH.Core/
+COPY ../MiRH.Domain/MiRH.Domain.csproj MiRH.Domain/
+COPY ../MiRH.DTO/MiRH.DTO.csproj MiRH.DTO/
+COPY ../MiRH.IOC/MiRH.IOC.csproj MiRH.IOC/
+COPY ../MiRH.Infraestructure/MiRH.Infraestructure.csproj MiRH.Infraestructure/
+COPY ../MiRH.Service/MiRH.Service.csproj MiRH.Service/
+
 RUN dotnet restore "./CoreUnity.WebAPI/CoreUnity.WebAPI.csproj"
 COPY . .
 WORKDIR "/src/CoreUnity.WebAPI"

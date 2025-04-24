@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CoreUnity.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6f89d7d9abc0d65b720004b7a37d7863b7a719f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3f0ae5dc0210a2d22b143a0f96ae8c1c5de8b7e")]
 [assembly: System.Reflection.AssemblyProductAttribute("CoreUnity.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CoreUnity.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -14,9 +14,9 @@ namespace CoreUnity.Core.Interfaces
     {
 
         /// <summary>
-        /// Gets a connection to the main identity database.
+        /// Gets a connection to database.
         /// </summary>
-        NpgsqlConnection GetIdentityDbConnection();
+        NpgsqlConnection GetDatabaseConnection();
 
         /// <summary>
         /// Obtains a connection to the database.

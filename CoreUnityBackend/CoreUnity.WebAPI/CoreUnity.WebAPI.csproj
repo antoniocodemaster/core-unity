@@ -18,4 +18,12 @@
     <Folder Include="Utils\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CoreUnity.Core\CoreUnity.Core.csproj" />
+    <ProjectReference Include="..\CoreUnity.Domain\CoreUnity.Domain.csproj" />
+    <ProjectReference Include="..\CoreUnity.DTO\CoreUnity.DTO.csproj" />
+    <ProjectReference Include="..\CoreUnity.IOC\CoreUnity.IOC.csproj" />
+    <ProjectReference Include="..\CoreUnity.Service\CoreUnity.Service.csproj" />
+  </ItemGroup>
+
 </Project>

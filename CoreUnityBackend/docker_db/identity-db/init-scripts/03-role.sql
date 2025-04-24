@@ -1,4 +1,4 @@
-\connect core_unity_identity;
+\connect core_unity;
 
 DROP TABLE IF EXISTS security.role;
 

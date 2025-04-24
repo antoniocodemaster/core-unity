@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\CoreUnity.WebAPI.props" />
-</Project>

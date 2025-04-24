@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CoreUnity.Core\CoreUnity.Core.csproj" />
+    <ProjectReference Include="..\CoreUnity.Domain\CoreUnity.Domain.csproj" />
+    <ProjectReference Include="..\CoreUnity.DTO\CoreUnity.DTO.csproj" />
+    <ProjectReference Include="..\CoreUnity.Infraestructure\CoreUnity.Infraestructure.csproj" />
+    <ProjectReference Include="..\CoreUnity.Service\CoreUnity.Service.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -36,7 +36,7 @@ services:
     image: quay.io/keycloak/keycloak:23.0.1
     container_name: keycloak
     restart: always
-    command: start-dev
+    command: start-dev --import-realm
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
@@ -52,6 +52,7 @@ services:
         condition: service_healthy
     volumes:
       - keycloak_data:/opt/keycloak/data
+      - ./keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json
 
   identity_db:
     build:
@@ -80,7 +81,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - REDIS_CONNECTION=redis:6379
-      - KEYCLOAK_AUTH_URL=http://keycloak:8080/realms/core_unity_realm/protocol/openid-connect/token
+      - KEYCLOAK_AUTH_URL=http://keycloak:8080/realms/core-unity/protocol/openid-connect/token
     ports:
       - "8081:8081"
       - "8080:8080"

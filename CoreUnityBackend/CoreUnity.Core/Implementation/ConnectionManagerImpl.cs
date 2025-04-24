@@ -28,14 +28,14 @@ namespace CoreUnity.Core.Implementation
 
         }
 
-        public NpgsqlConnection GetIdentityDbConnection()
+        public NpgsqlConnection GetDatabaseConnection()
         {
             try
             {
-                string? connString = _configuration[_environmentConnectionMap[EnvironmentKeysEnum.Identity.GetDescription()]];
+                string? connString = _configuration[_environmentConnectionMap[EnvironmentKeysEnum.Docker.GetDescription()]];
 
                 if (string.IsNullOrEmpty(connString))
-                    throw new Exception("An error occurred, the identity database is not available.");
+                    throw new Exception("An error occurred, database is not available.");
 
                 return new NpgsqlConnection(connString);
             } 
