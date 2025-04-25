@@ -54,15 +54,10 @@ namespace CoreUnity.WebAPI.Controllers
                     return Unauthorized(response);
                 }
 
-                AuthUserInfoDto authUserInfoDto = new()
-                {
-                    UserID = userProfile.user_id,
-                    UserName = userProfile.username,
-                    TokenInfo = await _authService.GetAccessToken(authUserDto)
-                };
+                var tokenInfo = await _authService.GetAccessToken();
 
                 response.Status = true;
-                response.Object = null;
+                response.Object = await _authService.GetAuthUserInfo(userProfile, tokenInfo);
                 return Ok(response);
             }
             catch (Exception ex)

@@ -8,7 +8,7 @@ namespace CoreUnity.Service.Interfaces
 
         Task<User?> IsUserAuthenticated(AuthUserDto authUserDto);
 
-        Task<Dictionary<string, object>> GetAccessToken(AuthUserDto authUserDto);
+        Task<Dictionary<string, object>> GetAccessToken();
 
         Task<AuthUserInfoDto> GetAuthUserInfo(User user, Dictionary<string, object> authToken);
 

@@ -62,13 +62,13 @@
               "target": "Package",
               "version": "[2.3.0, )"
             },
-            "Microsoft.Data.SqlClient": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[9.0.4, )"
             },
-            "Npgsql": {
+            "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[9.0.4, )"
             }
           },
           "imports": [

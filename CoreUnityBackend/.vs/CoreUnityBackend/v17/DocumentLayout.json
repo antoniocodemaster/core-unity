@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{20F04BA7-ED5D-4893-B649-038E41068BE5}|CoreUnity.WebAPI\\CoreUnity.WebAPI.csproj|c:\\users\\csolis\\desktop\\csolis\\desarrollo\\cesarsoftnica\\projects\\nicasoft\\coreunityproject\\core-unity\\coreunitybackend\\coreunity.webapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{20F04BA7-ED5D-4893-B649-038E41068BE5}|CoreUnity.WebAPI\\CoreUnity.WebAPI.csproj|solutionrelative:coreunity.webapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{20F04BA7-ED5D-4893-B649-038E41068BE5}|CoreUnity.WebAPI\\CoreUnity.WebAPI.csproj|c:\\users\\csolis\\desktop\\csolis\\desarrollo\\cesarsoftnica\\projects\\nicasoft\\coreunityproject\\core-unity\\coreunitybackend\\coreunity.webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20F04BA7-ED5D-4893-B649-038E41068BE5}|CoreUnity.WebAPI\\CoreUnity.WebAPI.csproj|solutionrelative:coreunity.webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB281B98-7E4F-470E-A58E-BB5E9D9A5CF3}|CoreUnity.Service\\CoreUnity.Service.csproj|c:\\users\\csolis\\desktop\\csolis\\desarrollo\\cesarsoftnica\\projects\\nicasoft\\coreunityproject\\core-unity\\coreunitybackend\\coreunity.service\\implementation\\authserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB281B98-7E4F-470E-A58E-BB5E9D9A5CF3}|CoreUnity.Service\\CoreUnity.Service.csproj|solutionrelative:coreunity.service\\implementation\\authserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7C1A116-9F2E-4453-985E-FE5C2E050359}|CoreUnity.IOC\\CoreUnity.IOC.csproj|c:\\users\\csolis\\desktop\\csolis\\desarrollo\\cesarsoftnica\\projects\\nicasoft\\coreunityproject\\core-unity\\coreunitybackend\\coreunity.ioc\\dependency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7C1A116-9F2E-4453-985E-FE5C2E050359}|CoreUnity.IOC\\CoreUnity.IOC.csproj|solutionrelative:coreunity.ioc\\dependency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F04BA7-ED5D-4893-B649-038E41068BE5}|CoreUnity.WebAPI\\CoreUnity.WebAPI.csproj|c:\\users\\csolis\\desktop\\csolis\\desarrollo\\cesarsoftnica\\projects\\nicasoft\\coreunityproject\\core-unity\\coreunitybackend\\coreunity.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{20F04BA7-ED5D-4893-B649-038E41068BE5}|CoreUnity.WebAPI\\CoreUnity.WebAPI.csproj|solutionrelative:coreunity.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|c:\\users\\csolis\\desktop\\csolis\\desarrollo\\cesarsoftnica\\projects\\nicasoft\\coreunityproject\\core-unity\\coreunitybackend\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -27,27 +39,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\CoreUnity.WebAPI\\Dockerfile",
-              "RelativeDocumentMoniker": "CoreUnity.WebAPI\\Dockerfile",
-              "ToolTip": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\CoreUnity.WebAPI\\Dockerfile",
-              "RelativeToolTip": "CoreUnity.WebAPI\\Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-24T22:06:49.488Z",
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\CoreUnity.WebAPI\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "CoreUnity.WebAPI\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\CoreUnity.WebAPI\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "CoreUnity.WebAPI\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwDoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T15:20:24.839Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AuthServiceImpl.cs",
+              "DocumentMoniker": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\CoreUnity.Service\\Implementation\\AuthServiceImpl.cs",
+              "RelativeDocumentMoniker": "CoreUnity.Service\\Implementation\\AuthServiceImpl.cs",
+              "ToolTip": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\CoreUnity.Service\\Implementation\\AuthServiceImpl.cs",
+              "RelativeToolTip": "CoreUnity.Service\\Implementation\\AuthServiceImpl.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAgwGAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T15:20:24.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dependency.cs",
+              "DocumentMoniker": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\CoreUnity.IOC\\Dependency.cs",
+              "RelativeDocumentMoniker": "CoreUnity.IOC\\Dependency.cs",
+              "ToolTip": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\CoreUnity.IOC\\Dependency.cs",
+              "RelativeToolTip": "CoreUnity.IOC\\Dependency.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T15:12:04.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\CoreUnity.WebAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "CoreUnity.WebAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\CoreUnity.WebAPI\\appsettings.json",
+              "RelativeToolTip": "CoreUnity.WebAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-25T15:07:51.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "docker-compose.yml",
               "DocumentMoniker": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\docker-compose.yml",
               "RelativeDocumentMoniker": "docker-compose.yml",
               "ToolTip": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\docker-compose.yml",
               "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2025-04-24T22:06:39.752Z",
+              "WhenOpened": "2025-04-25T15:03:19.939Z",
               "EditorCaption": ""
             }
           ]

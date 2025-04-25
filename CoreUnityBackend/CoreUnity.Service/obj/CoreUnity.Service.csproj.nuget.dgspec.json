@@ -62,13 +62,13 @@
               "target": "Package",
               "version": "[2.3.0, )"
             },
-            "Microsoft.Data.SqlClient": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[9.0.4, )"
             },
-            "Npgsql": {
+            "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[9.0.4, )"
             }
           },
           "imports": [
@@ -277,9 +277,6 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\CoreUnity.Core\\CoreUnity.Core.csproj": {
-                "projectPath": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\CoreUnity.Core\\CoreUnity.Core.csproj"
-              },
               "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\CoreUnity.Domain\\CoreUnity.Domain.csproj": {
                 "projectPath": "C:\\Users\\csolis\\Desktop\\CSOLIS\\Desarrollo\\CESARSOFTNICA\\PROJECTS\\NicaSoft\\CoreUnityProject\\core-unity\\CoreUnityBackend\\CoreUnity.Domain\\CoreUnity.Domain.csproj"
               }
@@ -301,6 +298,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

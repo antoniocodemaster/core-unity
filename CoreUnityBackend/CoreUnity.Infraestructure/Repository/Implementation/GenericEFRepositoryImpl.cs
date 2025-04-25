@@ -3,6 +3,7 @@ using CoreUnity.Domain.Persistence.Context;
 using CoreUnity.Infraestructure.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace CoreUnity.Infraestructure.Repository.Implementation
 {
     public class GenericEFRepositoryImpl<T> : IGenericEFRepository<T> where T : class

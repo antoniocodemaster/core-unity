@@ -25,34 +25,17 @@ namespace CoreUnity.IOC
                 options.UseNpgsql(configuration.GetConnectionString("DockerDB"))
             );
 
+            services.AddScoped<HttpClient>();
+
             // Infraestructure
             services.AddScoped<IUnitOfWork, UnitOfWorkImpl>();
             services.AddScoped(typeof(IGenericEFRepository<>), typeof(GenericEFRepositoryImpl<>));
-           
+
             // Services
             services.AddScoped(typeof(IBaseGenericService<>), typeof(BaseGenericServiceImpl<>));
 
             services.AddScoped<IAuthService, AuthServiceImpl>(); // AuthService
-
-            // Registrar IConnectionMultiplexer para Redis
-            /*services.AddSingleton<IConnectionMultiplexer>(sp =>
-            {
-                var redisConnection = Environment.GetEnvironmentVariable("REDIS_CONNECTION") ?? "localhost:6379";
-                return ConnectionMultiplexer.Connect(redisConnection);
-            });*/
-
-            // Configurar Redis Cache
-            /*services.AddStackExchangeRedisCache(options =>
-            {
-                options.Configuration = Environment.GetEnvironmentVariable("REDIS_CONNECTION") ?? "localhost:6379";
-                options.InstanceName = "Session_";
-            });*/
-
-            // Registrar el servicio genérico de Redis
-            //services.AddScoped(typeof(IRedisCacheService<>), typeof(RedisCacheService<>));
-
         }
-
 
     }
 }

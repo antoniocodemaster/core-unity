@@ -40,7 +40,7 @@ namespace CoreUnity.Service.Implementation
             }
         }
 
-        public async Task<Dictionary<string, object>?> GetAccessToken(AuthUserDto authUserDto)
+        public async Task<Dictionary<string, object>?> GetAccessToken()
         {
             try
             {
@@ -49,14 +49,16 @@ namespace CoreUnity.Service.Implementation
                 var tokenEndpoint = keycloakConfig["TokenEndpoint"];
                 var clientId = keycloakConfig["ClientId"];
                 var clientSecret = keycloakConfig["ClientSecret"];
+                var applicationUser = keycloakConfig["ApplicationUser"];
+                var applicationUserPassword = keycloakConfig["ApplicationUserPassword"];
 
                 var formData = new Dictionary<string, string>
                 {
                     { "grant_type", "password" },
                     { "client_id", clientId },
                     { "client_secret", clientSecret },
-                    { "username", authUserDto.UserName },
-                    { "password", authUserDto.Password }
+                    { "username", applicationUser },
+                    { "password", applicationUserPassword }
                 };
 
                 var content = new FormUrlEncodedContent(formData);
@@ -80,7 +82,24 @@ namespace CoreUnity.Service.Implementation
 
         public async Task<AuthUserInfoDto> GetAuthUserInfo(User user, Dictionary<string, object> authToken)
         {
-            throw new NotImplementedException();
+            try
+            {
+                AuthUserInfoDto authUserInfoDto = new()
+                {
+                    UserID = user.user_id,
+                    UserName = user.username,
+                    FullName = $"{user.first_name ?? ""} {user.second_name ?? ""} {user.first_last_name ?? ""} {user.second_last_name ?? ""}".Trim().ToUpper(),
+                    CompanyID = user.company_id,
+                    RolID = user.role_id,
+                    TokenInfo = authToken
+                };
+
+                return authUserInfoDto;
+            } 
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
     }
