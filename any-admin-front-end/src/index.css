@@ -1,0 +1,16 @@
+/* Tailwind base components */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.round-button {
+    @apply absolute -top-2 -right-2 rounded-full bg-red-500 text-white cursor-pointer w-8 h-8 flex items-center justify-center hover:bg-red-600 transition-colors;
+}
+
+.round-button:hover {
+    @apply bg-red-600;
+}
+
+.dashboard-left-nav-link {
+    @apply mx-auto flex transition-all duration-300 hover:bg-black hover:text-white gap-2 px-4 py-2;
+}
