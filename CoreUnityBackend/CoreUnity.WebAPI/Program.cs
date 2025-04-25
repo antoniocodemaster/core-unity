@@ -1,4 +1,6 @@
 using CoreUnity.IOC;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,23 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+    {
+        var keycloakConfig = builder.Configuration.GetSection("Keycloak");
+
+        options.Authority = keycloakConfig["Authority"]; // URL de Keycloak
+        options.Audience = keycloakConfig["ClientId"]; // ID del cliente en Keycloak
+        options.RequireHttpsMetadata = false; // Solo para entorno de desarrollo
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true
+        };
+    });
 
 // Dependency inyection container.
 builder.Services.DependencyInyection(builder.Configuration);
@@ -22,8 +41,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

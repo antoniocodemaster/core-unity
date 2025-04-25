@@ -40,3 +40,11 @@ C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUn
 C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend\bin\Debug\CoreUnity.Infraestructure.pdb
 C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend\obj\Debug\docker-c.35A3FFBA.Up2Date
+C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend\bin\Debug\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\csolis\Desktop\CSOLIS\Desarrollo\CESARSOFTNICA\PROJECTS\NicaSoft\CoreUnityProject\core-unity\CoreUnityBackend\bin\Debug\Microsoft.IdentityModel.Abstractions.dll

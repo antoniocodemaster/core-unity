@@ -83,7 +83,6 @@ services:
       - REDIS_CONNECTION=redis:6379
       - KEYCLOAK_AUTH_URL=http://keycloak:8080/realms/core-unity/protocol/openid-connect/token
     ports:
-      - "8081:8081"
       - "8080:8080"
     restart: always
 
