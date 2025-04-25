@@ -1,5 +1,9 @@
 # Ignorar archivos y carpetas de Visual Studio
+CoreUnityBackend/.vs
+CoreUnityBackend/bin/
+CoreUnityBackend/obj/
 .vs/
+
 *.suo
 *.user
 *.userosscache
