@@ -1,7 +1,4 @@
 # Ignorar archivos y carpetas de Visual Studio
-CoreUnityBackend/.vs
-CoreUnityBackend/bin/
-CoreUnityBackend/obj/
 .vs/
 
 *.suo
@@ -28,3 +25,7 @@ apphost.exe
 # Ignorar referencias temporales
 ref/
 refint/
+
+# Other temporary files
+CoreUnityBackend/CoreUnity.WebAPI/obj/
+CoreUnityBackend/CoreUnity.WebAPI/bin/
