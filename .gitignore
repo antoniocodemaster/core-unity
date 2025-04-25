@@ -29,3 +29,15 @@ refint/
 # Other temporary files
 CoreUnityBackend/CoreUnity.WebAPI/obj/
 CoreUnityBackend/CoreUnity.WebAPI/bin/
+CoreUnityBackend/CoreUnity.Core/obj/
+CoreUnityBackend/CoreUnity.Core/bin/
+CoreUnityBackend/CoreUnity.DTO/obj/
+CoreUnityBackend/CoreUnity.DTO/bin/
+CoreUnityBackend/CoreUnity.Domain/obj/
+CoreUnityBackend/CoreUnity.Domain/bin/
+CoreUnityBackend/CoreUnity.IOC/obj/
+CoreUnityBackend/CoreUnity.IOC/bin/
+CoreUnityBackend/CoreUnity.Infraestructure/obj/
+CoreUnityBackend/CoreUnity.Infraestructure/bin/
+CoreUnityBackend/CoreUnity.Service/obj/
+CoreUnityBackend/CoreUnity.Service/bin/
