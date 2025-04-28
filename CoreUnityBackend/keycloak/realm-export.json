@@ -33,7 +33,21 @@
             "attributes": {
                 "access.token.lifespan": "300",
                 "refresh.token.lifespan": "1800"
-            }
+            },
+            "protocolMappers": [
+                {
+                    "name": "audience",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-audience-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "included.client.audience": "core-unity-api-client",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "introspection.token.claim": "true"
+                    }
+                }
+            ]
         }
     ],
     "identityProviders": [],
