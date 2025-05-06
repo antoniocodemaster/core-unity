@@ -1,4 +1,4 @@
-import { Contact } from '../../types/contats';
+import { Contacto as Contact } from '../../types/contactos';
 import { Link } from 'react-router-dom';
 import Text from '../typography/Text';
 import Title from '../typography/Title';
@@ -16,7 +16,7 @@ const ContactsList = ({ contacts }: ContactsListProps) => {
           <li key={index}>
             <Link to={`/admin-dashboard/contacts/${contact.id}`}>
               <Text>
-                {contact.firstName} {contact.lastName}
+                {contact.primerNombre} {contact.apellido}
               </Text>
             </Link>
           </li>

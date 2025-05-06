@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { Contact } from '../../types/contats';
+import { Contacto as Contact } from '../../types/contactos';
 
 interface ContactsState {
   contacts: Contact[];
