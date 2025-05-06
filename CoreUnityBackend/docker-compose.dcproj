@@ -25,6 +25,9 @@
     <None Include="docker_db\identity-db\init-scripts\03-role.sql" />
     <None Include="docker_db\identity-db\init-scripts\04-user.sql" />
     <None Include="docker_db\identity-db\init-scripts\05-user-detail.sql" />
+    <None Include="docker_db\identity-db\seed-scripts\01-seed-company.sql" />
+    <None Include="docker_db\identity-db\seed-scripts\02-seed-role.sql" />
+    <None Include="docker_db\identity-db\seed-scripts\03-seed-user.sql" />
     <None Include="keycloak\realm-export.json" />
   </ItemGroup>
 </Project>
