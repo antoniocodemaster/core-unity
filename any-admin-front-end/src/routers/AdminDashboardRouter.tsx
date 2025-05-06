@@ -1,8 +1,9 @@
 // src/routers/AdminDashboardRouter.tsx
 import AdminDashboardLayout from '../components/layouts/AdminDashboard/AdminDashboardLayout';
 import DashboardPage from '../pages/AdminDashboard/DashboardPage';
-import ReportsPage from '../pages/AdminDashboard/ReportsPage';
+import ContactsPage from '../pages/AdminDashboard/contacts/ContactsPage';
 import PrivateRoute from './PrivateRoute';
+import SingleContactPage from '../pages/AdminDashboard/contacts/SingleContactPage';
 
 const adminDashboardRoutes = {
   path: '/admin-dashboard',
@@ -12,13 +13,19 @@ const adminDashboardRoutes = {
     </PrivateRoute>
   ),
   children: [
+    // Dashboard
     {
       index: true,
       element: <DashboardPage />,
     },
+    // Contacts
     {
-      path: 'reports',
-      element: <ReportsPage />,
+      path: 'contacts',
+      element: <ContactsPage />,
+    },
+    {
+      path: 'contacts/:id',
+      element: <SingleContactPage />,
     },
   ],
 };

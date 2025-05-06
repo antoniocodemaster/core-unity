@@ -3,8 +3,8 @@ import Title from '../../typography/Title';
 import {
   HomeIcon,
   Bars3Icon,
-  BookOpenIcon,
   PowerIcon,
+  UserGroupIcon,
 } from '@heroicons/react/24/outline';
 import useAuthState from '../../../lib/states/AuthState';
 
@@ -19,9 +19,9 @@ const LeftSideNav = () => {
         <Bars3Icon className="w-6 h-6" />
         Dashboard
       </Link>
-      <Link className="dashboard-left-nav-link" to="/admin-dashboard/reports">
-        <BookOpenIcon className="w-6 h-6" />
-        Reports
+      <Link className="dashboard-left-nav-link" to="/admin-dashboard/contacts">
+        <UserGroupIcon className="w-6 h-6" />
+        Contacts
       </Link>
       <Link className="dashboard-left-nav-link" to="/">
         <HomeIcon className="w-6 h-6" />
