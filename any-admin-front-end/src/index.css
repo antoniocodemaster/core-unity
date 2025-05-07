@@ -14,3 +14,13 @@
 .dashboard-left-nav-link {
     @apply mx-auto flex transition-all duration-300 hover:bg-black hover:text-white gap-2 px-4 py-2;
 }
+
+.dashboard-left-nav-link.active {
+    @apply bg-black text-white;
+}
+
+/* Styles for navs */
+a {
+    @apply transition-all duration-300 hover:opacity-70 hover:underline;
+}
+

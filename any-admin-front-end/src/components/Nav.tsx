@@ -12,13 +12,13 @@ const Nav = () => {
         {/* Navigation Links */}
         <ul className="flex space-x-6">
           <li className="hover:text-gray-300 cursor-pointer">
-            <Link to="/">Home</Link>
+            <Link to="/">Inicio</Link>
           </li>
           <li className="hover:text-gray-300 cursor-pointer">
-            <Link to="/admin-dashboard">Admin Dashboard</Link>
+            <Link to="/admin-dashboard">Panel de Administración</Link>
           </li>
           <li className="hover:text-gray-300 cursor-pointer">
-            <Link to="/asdf">Error Page</Link>
+            <Link to="/asdf">Página de Error</Link>
           </li>
         </ul>
       </div>
