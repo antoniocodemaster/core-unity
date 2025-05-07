@@ -4,9 +4,9 @@ interface TableProps {
   columns: { key: string; label: string }[];
   tableItems: any[];
   options?: {
-    viewContact?: string;
-    editContact?: boolean;
-    deleteContact?: boolean;
+    viewItem?: string;
+    editItem?: boolean;
+    deleteItem?: boolean;
   };
 }
 
@@ -23,9 +23,9 @@ const Table = ({ columns, tableItems, options }: TableProps) => (
             {column.label}
           </th>
         ))}
-        {(options?.viewContact ||
-          options?.editContact ||
-          options?.deleteContact) && (
+        {(options?.viewItem ||
+          options?.editItem ||
+          options?.deleteItem) && (
           <th className="px-4 py-2 text-left text-sm font-semibold text-gray-700 border-b">
             Opciones
           </th>
@@ -41,22 +41,22 @@ const Table = ({ columns, tableItems, options }: TableProps) => (
               {item[column.key]}
             </td>
           ))}
-          {(options?.viewContact ||
-            options?.editContact ||
-            options?.deleteContact) && (
+          {(options?.viewItem ||
+            options?.editItem ||
+            options?.deleteItem) && (
             <td className="px-4 py-2 text-sm text-gray-800 border-b">
               <div className="flex items-center gap-2">
-                {options?.viewContact && (
-                  <Link to={`${options.viewContact}/${item.id}`}>
+                {options?.viewItem && (
+                  <Link to={`${options.viewItem}/${item.id}`}>
                     <button className="text-blue-500 hover:underline">Ver</button>
                   </Link>
                 )}
-                {options?.editContact && (
+                {options?.editItem && (
                   <button className="text-yellow-600 hover:underline">
                     Editar
                   </button>
                 )}
-                {options?.deleteContact && (
+                {options?.deleteItem && (
                   <button className="text-red-500 hover:underline">
                     Eliminar
                   </button>

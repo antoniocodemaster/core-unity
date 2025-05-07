@@ -6,8 +6,8 @@ export type Tarea = {
   asignadoA: string;
   creadoPor: string;
   estaActiva: boolean;
-  fechaCreacion: Date;
-  fechaActualizacion: Date;
+  fechaCreacion: string;
+  fechaActualizacion: string;
 };
 
 export type EstadoTarea = 'pendiente' | 'en_progreso' | 'completada';
