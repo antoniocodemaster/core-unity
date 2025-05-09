@@ -9,4 +9,8 @@ export default defineConfig({
     host: true,
     open: true,
   },
+  assetsInclude: ['**/*.otf'],
+  build: {
+    assetsInlineLimit: 0
+  }
 })

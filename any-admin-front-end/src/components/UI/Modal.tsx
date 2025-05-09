@@ -18,11 +18,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
         <div onClick={onClose} className="round-button">
           X
         </div>
-        {title && <Title title={title} />}
+        {title && <Title className="mb-8" title={title} />}
         {children}
-        <div className="mt-6">
-          <Button onClick={onClose}>Close</Button>
-        </div>
       </div>
     </div>
   );

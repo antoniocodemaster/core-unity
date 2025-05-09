@@ -1,4 +1,4 @@
-import { Tarea as Task } from '../../types/task';
+import { Tarea as Task } from '../../types/tareas';
 
 export const fakeTasks: Task[] = [
   {

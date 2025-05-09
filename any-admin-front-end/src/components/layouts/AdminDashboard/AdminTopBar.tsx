@@ -3,7 +3,7 @@ import { BellIcon, UserCircleIcon } from '@heroicons/react/24/outline';
 
 const AdminTopBar = () => {
   return (
-    <div className="flex justify-end p-4 bg-white ">
+    <div className="flex justify-end p-3">
       <Button variant="transparent">
         <BellIcon className="w-6 h-6" />
       </Button>

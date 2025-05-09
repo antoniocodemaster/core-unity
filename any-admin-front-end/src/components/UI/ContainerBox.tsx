@@ -20,7 +20,7 @@ const ContainerBox = ({
 
   return (
     <div
-      className={`p-4 bg-white rounded-lg shadow-md mb-4 ${widthClass} ${className}`}
+      className={`p-4 bg-white rounded-sm shadow-md mb-4 ${widthClass} ${className}`}
     >
       {children}
     </div>

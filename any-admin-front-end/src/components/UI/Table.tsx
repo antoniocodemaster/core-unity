@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Button from './Button';
 
 interface TableProps {
   columns: { key: string; label: string }[];
@@ -13,20 +14,18 @@ interface TableProps {
 const Table = ({ columns, tableItems, options }: TableProps) => (
   <table className="min-w-full divide-y divide-gray-200 border border-gray-300 rounded-md overflow-hidden">
     {/* Table header */}
-    <thead className="bg-gray-300">
+    <thead className="bg-primary">
       <tr>
         {columns.map((column, i) => (
           <th
             key={i}
-            className="px-4 py-2 text-left text-sm font-semibold text-gray-700 border-b"
+            className="px-4 py-2 text-left text-sm font-semibold text-white border-b"
           >
             {column.label}
           </th>
         ))}
-        {(options?.viewItem ||
-          options?.editItem ||
-          options?.deleteItem) && (
-          <th className="px-4 py-2 text-left text-sm font-semibold text-gray-700 border-b">
+        {(options?.viewItem || options?.editItem || options?.deleteItem) && (
+          <th className="px-4 py-2 text-left text-sm font-semibold text-white border-b">
             Opciones
           </th>
         )}
@@ -35,31 +34,31 @@ const Table = ({ columns, tableItems, options }: TableProps) => (
     {/* Table body */}
     <tbody className="divide-y divide-gray-100">
       {tableItems.map((item, i) => (
-        <tr key={i} className="hover:bg-gray-50">
+        <tr key={i} className="hover:bg-info-light">
           {columns.map((column, j) => (
             <td key={j} className="px-4 py-2 text-sm text-gray-800 border-b">
               {item[column.key]}
             </td>
           ))}
-          {(options?.viewItem ||
-            options?.editItem ||
-            options?.deleteItem) && (
+          {(options?.viewItem || options?.editItem || options?.deleteItem) && (
             <td className="px-4 py-2 text-sm text-gray-800 border-b">
               <div className="flex items-center gap-2">
                 {options?.viewItem && (
                   <Link to={`${options.viewItem}/${item.id}`}>
-                    <button className="text-blue-500 hover:underline">Ver</button>
+                    <Button variant="transparent" className="text-info">
+                      Ver
+                    </Button>
                   </Link>
                 )}
                 {options?.editItem && (
-                  <button className="text-yellow-600 hover:underline">
+                  <Button variant="transparent" className="text-warning">
                     Editar
-                  </button>
+                  </Button>
                 )}
                 {options?.deleteItem && (
-                  <button className="text-red-500 hover:underline">
+                  <Button variant="transparent" className="text-danger">
                     Eliminar
-                  </button>
+                  </Button>
                 )}
               </div>
             </td>

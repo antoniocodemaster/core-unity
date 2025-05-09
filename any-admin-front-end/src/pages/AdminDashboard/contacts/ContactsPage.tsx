@@ -4,8 +4,11 @@ import ContainerBox from '../../../components/UI/ContainerBox';
 import { fakeContacts as contacts } from '../../../lib/fakes/contacts';
 import Table from '../../../components/UI/Table';
 import Button from '../../../components/UI/Button';
+import useContactsState from '../../../lib/states/ContactsState';
 
 const ContactsPage = () => {
+  const { setIsUpsertContactModalOpen } = useContactsState();
+
   const columns = [
     { key: 'primerNombre', label: 'Nombre' },
     { key: 'apellido', label: 'Apellido' },
@@ -32,7 +35,12 @@ const ContactsPage = () => {
 
         <Title title="Contactos" style="SectionTitle" />
         <Table columns={columns} tableItems={contacts} options={options} />
-        <Button className="mt-4">Agregar Contacto</Button>
+        <Button
+          className="mt-4"
+          onClick={() => setIsUpsertContactModalOpen(true)}
+        >
+          Agregar Contacto
+        </Button>
       </ContainerBox>
     </>
   );
