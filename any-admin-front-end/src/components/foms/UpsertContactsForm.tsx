@@ -5,7 +5,6 @@ import {
   ContactSchema,
 } from '../../lib/schemas/contacts-schemas';
 import InputText from '../UI/InputText';
-import Button from '../UI/Button';
 
 const UpsertContactsForm = () => {
   const contactForm = useForm<ContactSchema>({
@@ -60,10 +59,6 @@ const UpsertContactsForm = () => {
           register={contactForm.register}
           error={contactForm.formState.errors.correoElectronico?.message}
         />
-
-        <Button type="submit" variant="go">
-          Agregar Contacto
-        </Button>
       </form>
     </>
   );

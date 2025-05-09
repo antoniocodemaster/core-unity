@@ -9,6 +9,7 @@ const UpsertTasksModal = () => {
     <Modal
       isOpen={isUpsertTaskModalOpen}
       onClose={() => setIsUpsertTaskModalOpen(false)}
+      title="Agregar Tarea"
     >
       <UpsertTasksForm />
     </Modal>

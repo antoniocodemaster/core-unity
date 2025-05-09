@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { TasksSchema, tasksSchema } from '../../lib/schemas/tasks-schemas';
 import InputText from '../UI/InputText';
-import Button from '../UI/Button';
+
 const UpsertTasksForm = () => {
   const taskForm = useForm<TasksSchema>({
     resolver: zodResolver(tasksSchema),
@@ -33,10 +33,6 @@ const UpsertTasksForm = () => {
         placeholder="Descripción de la tarea"
         type="text"
       />
-
-      <Button type="submit" variant="go">
-        Agregar Tarea
-      </Button>
     </form>
   );
 };

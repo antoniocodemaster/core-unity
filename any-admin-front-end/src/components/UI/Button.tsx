@@ -1,7 +1,7 @@
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   className?: string;
-  variant?: 'go' | 'stop' | 'warning' | 'transparent';
+  variant?: 'primary' | 'success' | 'danger' | 'warning' | 'transparent';
   type?: 'button' | 'submit' | 'reset';
   size?: 'small' | 'medium' | 'large';
   fit?: 'fit' | 'full';
@@ -36,14 +36,14 @@ const Button = ({
     case 'transparent':
       variantStyle = `bg-transparent text-black hover:opacity-60`;
       break;
-    case 'stop':
-      variantStyle = `bg-red-500 text-white hover:bg-red-600`;
+    case 'danger':
+      variantStyle = `bg-danger text-white hover:bg-danger-dark`;
       break;
     case 'warning':
-      variantStyle = `bg-yellow-500 text-white hover:bg-yellow-600`;
+      variantStyle = `bg-warning text-white hover:bg-warning-dark`;
       break;
     default:
-      variantStyle = `bg-primary text-white hover:bg-green-600`;
+      variantStyle = `bg-primary text-white hover:bg-primary-dark`;
       break;
   }
 

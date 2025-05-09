@@ -66,13 +66,13 @@ const LogInPage = () => {
               error={loginForm.formState.errors.password?.message}
             />
 
-            <Button type="submit" variant="go">
+            <Button type="submit" variant="success">
               Continue
             </Button>
           </form>
           <Text className="mt-4">
             Don't have an account?{' '}
-            <Link to="/login" className="text-green-500">
+            <Link to="/login" className="text-success">
               Sign up
             </Link>
           </Text>

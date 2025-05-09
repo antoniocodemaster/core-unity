@@ -20,7 +20,7 @@ const LeftSideNav = () => {
   };
 
   return (
-    <div className="w-52 h-screen bg-white shadow-md">
+    <div className="w-52  bg-white shadow-md">
       <Title
         title="AnyAdmin"
         className="pt-3 pb-2 text-center"

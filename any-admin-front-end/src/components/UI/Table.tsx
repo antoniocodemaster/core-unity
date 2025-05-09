@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Button from './Button';
 
 interface TableProps {
   columns: { key: string; label: string }[];
@@ -33,7 +34,7 @@ const Table = ({ columns, tableItems, options }: TableProps) => (
     {/* Table body */}
     <tbody className="divide-y divide-gray-100">
       {tableItems.map((item, i) => (
-        <tr key={i} className="hover:bg-gray-50">
+        <tr key={i} className="hover:bg-info-light">
           {columns.map((column, j) => (
             <td key={j} className="px-4 py-2 text-sm text-gray-800 border-b">
               {item[column.key]}
@@ -44,20 +45,20 @@ const Table = ({ columns, tableItems, options }: TableProps) => (
               <div className="flex items-center gap-2">
                 {options?.viewItem && (
                   <Link to={`${options.viewItem}/${item.id}`}>
-                    <button className="text-blue-500 hover:underline">
+                    <Button variant="transparent" className="text-info">
                       Ver
-                    </button>
+                    </Button>
                   </Link>
                 )}
                 {options?.editItem && (
-                  <button className="text-yellow-600 hover:underline">
+                  <Button variant="transparent" className="text-warning">
                     Editar
-                  </button>
+                  </Button>
                 )}
                 {options?.deleteItem && (
-                  <button className="text-red-500 hover:underline">
+                  <Button variant="transparent" className="text-danger">
                     Eliminar
-                  </button>
+                  </Button>
                 )}
               </div>
             </td>

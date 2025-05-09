@@ -28,8 +28,16 @@ html {
     @apply mx-auto flex transition-all duration-300 gap-2 px-4 py-2 hover:no-underline;
 }
 
+.dashboard-left-nav-link:hover {
+    @apply bg-primary-dark text-white opacity-100;
+}
+
 .dashboard-left-nav-link.active {
     @apply bg-primary text-white;
+}
+
+.dashboard-left-nav-link.active:hover {
+    @apply bg-primary-dark text-white opacity-100;
 }
 
 /* Styles for navs */

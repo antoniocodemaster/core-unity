@@ -16,7 +16,7 @@ const AdminDashboardLayout = () => {
           <AdminTopBar />
 
           {/* Main Content */}
-          <div className="p-4">
+          <div className="p-4 min-h-screen">
             <Outlet />
           </div>
         </div>
