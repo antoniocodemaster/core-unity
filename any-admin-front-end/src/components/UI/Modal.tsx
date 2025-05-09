@@ -20,14 +20,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
         </div>
         {title && <Title className="mb-8" title={title} />}
         {children}
-        <div className="mt-6 flex gap-2 justify-end">
-          <Button variant="danger" onClick={onClose}>
-            Cancelar
-          </Button>
-          <Button variant="primary" onClick={onClose}>
-            Agregar
-          </Button>
-        </div>
       </div>
     </div>
   );
