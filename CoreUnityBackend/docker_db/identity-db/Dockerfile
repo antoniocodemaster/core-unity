@@ -4,9 +4,10 @@ FROM postgres:15
 ENV POSTGRES_USER=postgres
 ENV POSTGRES_PASSWORD=mysecretpassword
 
-# Copiar scripts SQL y el entrypoint.sh al lugar correcto
-COPY init-scripts/*.sql /docker-entrypoint-initdb.d/
+# Copy scripts from init and seeds
+COPY init-scripts/*.sql /docker-entrypoint-initdb.d/init/
+COPY seed-scripts/*.sql /docker-entrypoint-initdb.d/seeds/
 COPY entrypoint.sh /docker-entrypoint-initdb.d/entrypoint.sh
 
-# Permisos de ejecución
+# Execution permissions
 RUN chmod +x /docker-entrypoint-initdb.d/entrypoint.sh
