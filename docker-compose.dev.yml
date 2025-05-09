@@ -4,10 +4,10 @@ services:
     container_name: redis_user_session
     restart: always
     ports:
-     - "6379:6379"
+      - "6379:6379"
     command: redis-server --appendonly yes
     volumes:
-     - redis_data:/data
+      - redis_data:/data
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s
@@ -52,11 +52,11 @@ services:
         condition: service_healthy
     volumes:
       - keycloak_data:/opt/keycloak/data
-      - ./keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json
+      - ./CoreUnityBackend/keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json
 
   identity_db:
     build:
-      context: ./docker_db/identity-db
+      context: ./CoreUnityBackend/docker_db/identity-db
     container_name: identity_db
     restart: always
     environment:
@@ -66,11 +66,16 @@ services:
       - "5434:5432"
     volumes:
       - identity_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   coreunity.webapi:
-    image: ${DOCKER_REGISTRY-}coreunitywebapi
+    image: coreunitywebapi
     build:
-      context: .
+      context: ./CoreUnityBackend
       dockerfile: CoreUnity.WebAPI/Dockerfile
     container_name: core_unity_webapi
     depends_on:
@@ -78,6 +83,8 @@ services:
         condition: service_healthy
       keycloak:
         condition: service_started
+      identity_db:
+        condition: service_healthy
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - REDIS_CONNECTION=redis:6379
@@ -85,13 +92,30 @@ services:
     ports:
       - "8080:8080"
     restart: always
-  
+
+  any-admin-front-end:
+    container_name: any_admin_frontend
+    build:
+      context: ./any-admin-front-end
+      dockerfile: Dockerfile
+    ports:
+      - "4000:80"
+    depends_on:
+      - coreunity.webapi
+
+  nginx:
+    image: nginx:latest
+    container_name: reverse_proxy_nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.dev.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - any-admin-front-end
+      - coreunity.webapi
+
 volumes:
   redis_data:
-    driver: local
   keycloak_db_data:
-    driver: local
   keycloak_data:
-    driver: local
   identity_db_data:
-    driver: local
