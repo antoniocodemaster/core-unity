@@ -2,16 +2,24 @@ import Modal from '../UI/Modal';
 import useTasksState from '../../lib/states/TasksState';
 import UpsertTasksForm from '../foms/UpsertTasksForm';
 import Button from '../UI/Button';
-
+import { useRef } from 'react';
+import { TasksSchema } from '../../lib/schemas/tasks-schemas';
 const UpsertTasksModal = () => {
   const { isUpsertTaskModalOpen, setIsUpsertTaskModalOpen } = useTasksState();
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleClose = () => {
     setIsUpsertTaskModalOpen(false);
   };
 
   const handleSubmit = () => {
-    console.log('submit');
+    formRef.current?.requestSubmit();
+  };
+
+  const handleFormSubmit = (data: TasksSchema) => {
+    console.log('Form submitted:', data);
+    // Here you can add your logic to save the task
+    handleClose();
   };
 
   return (
@@ -20,7 +28,7 @@ const UpsertTasksModal = () => {
       onClose={handleClose}
       title="Agregar Tarea"
     >
-      <UpsertTasksForm />
+      <UpsertTasksForm ref={formRef} onSubmit={handleFormSubmit} />
 
       <div className="mt-6 flex gap-2 justify-end">
         <Button variant="danger" onClick={handleClose}>

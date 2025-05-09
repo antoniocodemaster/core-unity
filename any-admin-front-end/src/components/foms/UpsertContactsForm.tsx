@@ -5,25 +5,30 @@ import {
   ContactSchema,
 } from '../../lib/schemas/contacts-schemas';
 import InputText from '../UI/InputText';
+import { forwardRef } from 'react';
 
-const UpsertContactsForm = () => {
-  const contactForm = useForm<ContactSchema>({
-    resolver: zodResolver(contactSchema),
-    defaultValues: {
-      nombre: '',
-      apellido: '',
-      telefonoPrincipal: '',
-      correoElectronico: '',
-    },
-  });
+interface UpsertContactsFormProps {
+  onSubmit: (data: ContactSchema) => void;
+}
 
-  const onSubmit = (data: ContactSchema) => {
-    console.log(data);
-  };
+const UpsertContactsForm = forwardRef<HTMLFormElement, UpsertContactsFormProps>(
+  ({ onSubmit }, ref) => {
+    const contactForm = useForm<ContactSchema>({
+      resolver: zodResolver(contactSchema),
+      defaultValues: {
+        nombre: '',
+        apellido: '',
+        telefonoPrincipal: '',
+        correoElectronico: '',
+      },
+    });
 
-  return (
-    <>
-      <form onSubmit={contactForm.handleSubmit(onSubmit)}>
+    const handleSubmit = (data: ContactSchema) => {
+      onSubmit(data);
+    };
+
+    return (
+      <form ref={ref} onSubmit={contactForm.handleSubmit(handleSubmit)}>
         <InputText
           name="nombre"
           label="Nombre"
@@ -60,8 +65,8 @@ const UpsertContactsForm = () => {
           error={contactForm.formState.errors.correoElectronico?.message}
         />
       </form>
-    </>
-  );
-};
+    );
+  }
+);
 
 export default UpsertContactsForm;
