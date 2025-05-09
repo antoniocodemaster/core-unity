@@ -48,36 +48,31 @@ const LogInPage = () => {
           />
 
           <form onSubmit={loginForm.handleSubmit(onSubmit)}>
-            <div className="mb-4">
-              <InputText
-                name="email"
-                label="Email address"
-                type="text"
-                placeholder="Enter your email address"
-                register={loginForm.register}
-                error={loginForm.formState.errors.email?.message}
-              />
-            </div>
-            <div className="mb-4">
-              <InputText
-                name="password"
-                label="Password"
-                type="password"
-                placeholder="Enter your password"
-                register={loginForm.register}
-                error={loginForm.formState.errors.password?.message}
-              />
-            </div>
+            <InputText
+              name="email"
+              label="Email address"
+              type="text"
+              placeholder="Enter your email address"
+              register={loginForm.register}
+              error={loginForm.formState.errors.email?.message}
+            />
+
+            <InputText
+              name="password"
+              label="Password"
+              type="password"
+              placeholder="Enter your password"
+              register={loginForm.register}
+              error={loginForm.formState.errors.password?.message}
+            />
+
             <Button type="submit" variant="go">
               Continue
             </Button>
           </form>
           <Text className="mt-4">
             Don't have an account?{' '}
-            <Link
-              to="/login"
-              className="text-green-500"
-            >
+            <Link to="/login" className="text-green-500">
               Sign up
             </Link>
           </Text>

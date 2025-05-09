@@ -21,7 +21,7 @@ const InputText: React.FC<InputTextProps> = ({
   onChange,
 }) => {
   return (
-    <>
+    <div className="mb-4">
       {label && <label className="block text-gray-700">{label}</label>}
       <input
         type={type}
@@ -31,7 +31,7 @@ const InputText: React.FC<InputTextProps> = ({
         onChange={onChange}
       />
       {error && <Text style="error">{error}</Text>}
-    </>
+    </div>
   );
 };
 
