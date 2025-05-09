@@ -43,7 +43,7 @@ const Button = ({
       variantStyle = `bg-yellow-500 text-white hover:bg-yellow-600`;
       break;
     default:
-      variantStyle = `bg-green-500 text-white hover:bg-green-600`;
+      variantStyle = `bg-primary text-white hover:bg-green-600`;
       break;
   }
 

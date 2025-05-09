@@ -3,24 +3,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: local('Helvetica Neue');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-family: 'Helvetica Neue', sans-serif !important;
+    font-weight: 400 !important;
+}
+
 .round-button {
-    @apply absolute -top-2 -right-2 rounded-full bg-red-500 text-white cursor-pointer w-8 h-8 flex items-center justify-center hover:bg-red-600 transition-colors;
+    background-color: #f55a4d;
+    @apply transition-all duration-300 absolute -top-2 -right-2 rounded-full text-white cursor-pointer w-8 h-8 flex items-center justify-center hover:bg-red-600 transition-colors;
 }
 
 .round-button:hover {
-    @apply bg-red-600;
+    background-color: #cf4c40 !important;
 }
 
 .dashboard-left-nav-link {
-    @apply mx-auto flex transition-all duration-300 hover:bg-black hover:text-white gap-2 px-4 py-2;
+    @apply mx-auto flex transition-all duration-300 gap-2 px-4 py-2 hover:no-underline;
 }
 
 .dashboard-left-nav-link.active {
-    @apply bg-black text-white;
+    @apply bg-primary text-white;
 }
 
 /* Styles for navs */
 a {
     @apply transition-all duration-300 hover:opacity-70 hover:underline;
 }
-

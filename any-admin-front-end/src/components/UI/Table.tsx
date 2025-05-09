@@ -13,20 +13,18 @@ interface TableProps {
 const Table = ({ columns, tableItems, options }: TableProps) => (
   <table className="min-w-full divide-y divide-gray-200 border border-gray-300 rounded-md overflow-hidden">
     {/* Table header */}
-    <thead className="bg-gray-300">
+    <thead className="bg-primary">
       <tr>
         {columns.map((column, i) => (
           <th
             key={i}
-            className="px-4 py-2 text-left text-sm font-semibold text-gray-700 border-b"
+            className="px-4 py-2 text-left text-sm font-semibold text-white border-b"
           >
             {column.label}
           </th>
         ))}
-        {(options?.viewItem ||
-          options?.editItem ||
-          options?.deleteItem) && (
-          <th className="px-4 py-2 text-left text-sm font-semibold text-gray-700 border-b">
+        {(options?.viewItem || options?.editItem || options?.deleteItem) && (
+          <th className="px-4 py-2 text-left text-sm font-semibold text-white border-b">
             Opciones
           </th>
         )}
@@ -41,14 +39,14 @@ const Table = ({ columns, tableItems, options }: TableProps) => (
               {item[column.key]}
             </td>
           ))}
-          {(options?.viewItem ||
-            options?.editItem ||
-            options?.deleteItem) && (
+          {(options?.viewItem || options?.editItem || options?.deleteItem) && (
             <td className="px-4 py-2 text-sm text-gray-800 border-b">
               <div className="flex items-center gap-2">
                 {options?.viewItem && (
                   <Link to={`${options.viewItem}/${item.id}`}>
-                    <button className="text-blue-500 hover:underline">Ver</button>
+                    <button className="text-blue-500 hover:underline">
+                      Ver
+                    </button>
                   </Link>
                 )}
                 {options?.editItem && (

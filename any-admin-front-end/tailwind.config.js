@@ -1,17 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
-        'primary-red': '#A70000',
-        'primary-red-hover': '#CE0000',
-        'black-50':'#0C0C0C'
-      }
+        primary: '#4b66a5',
+        success: '#54aa76',
+        warning: '#d09545',
+        danger: '#f55a4d',
+        'danger-dark': '#cf4c40',
+        info: '#88b0ed',
+        'gray-100': '#dbdad9',
+      },
     },
   },
   plugins: [],
-}
+};

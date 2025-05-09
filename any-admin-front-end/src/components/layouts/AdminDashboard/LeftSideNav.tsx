@@ -2,7 +2,6 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Title from '../../typography/Title';
 import {
   HomeIcon,
-  Bars3Icon,
   PowerIcon,
   UserGroupIcon,
   ListBulletIcon,
@@ -21,46 +20,55 @@ const LeftSideNav = () => {
   };
 
   return (
-    <div className="w-52 h-screen bg-white">
-      <Title title="AnyAdmin" className="p-4" style="SectionTitle" />
-      <Link
-        className={getLinkClassName('/admin-dashboard')}
-        to="/admin-dashboard"
-      >
-        <HomeIcon className="w-6 h-6" />
-        Inicio
-      </Link>
+    <div className="w-52 h-screen bg-white shadow-md">
+      <Title
+        title="AnyAdmin"
+        className="pt-3 pb-2 text-center"
+        style="SectionTitle"
+      />
 
-      <Link
-        className={getLinkClassName('/admin-dashboard/contacts')}
-        to="/admin-dashboard/contacts"
-      >
-        <UserGroupIcon className="w-6 h-6" />
-        Contactos
-      </Link>
-      <Link
-        className={getLinkClassName('/admin-dashboard/tasks')}
-        to="/admin-dashboard/tasks"
-      >
-        <ListBulletIcon className="w-6 h-6" />
-        Tareas
-      </Link>
-      <Link
-        className={getLinkClassName('/admin-dashboard/inventory')}
-        to="/admin-dashboard/inventory"
-      >
-        <CubeIcon className="w-6 h-6" />
-        Inventario
-      </Link>
-      <div
-        className="dashboard-left-nav-link !ml-0 cursor-pointer"
-        onClick={() => {
-          logout();
-          navigate('/login');
-        }}
-      >
-        <PowerIcon className="w-6 h-6" />
-        Cerrar sesión
+      <hr className="mb-6" />
+
+      <div className="w-[90%] mx-auto">
+        <Link
+          className={getLinkClassName('/admin-dashboard')}
+          to="/admin-dashboard"
+        >
+          <HomeIcon className="w-6 h-6" />
+          Inicio
+        </Link>
+
+        <Link
+          className={getLinkClassName('/admin-dashboard/contacts')}
+          to="/admin-dashboard/contacts"
+        >
+          <UserGroupIcon className="w-6 h-6" />
+          Contactos
+        </Link>
+        <Link
+          className={getLinkClassName('/admin-dashboard/tasks')}
+          to="/admin-dashboard/tasks"
+        >
+          <ListBulletIcon className="w-6 h-6" />
+          Tareas
+        </Link>
+        <Link
+          className={getLinkClassName('/admin-dashboard/inventory')}
+          to="/admin-dashboard/inventory"
+        >
+          <CubeIcon className="w-6 h-6" />
+          Inventario
+        </Link>
+        <div
+          className="dashboard-left-nav-link !ml-0 cursor-pointer"
+          onClick={() => {
+            logout();
+            navigate('/login');
+          }}
+        >
+          <PowerIcon className="w-6 h-6" />
+          Cerrar sesión
+        </div>
       </div>
     </div>
   );
