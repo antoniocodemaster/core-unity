@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from './Button'; // Assuming Button component is in the same directory or adjust path
+import Button from './Button';
 
 interface TabItem {
   label: string;
@@ -28,11 +28,11 @@ const Tabs: React.FC<TabsProps> = ({
   );
 
   const tabListClassName = 'flex border-b border-gray-200';
-  const activeTabClassName = 'text-primary';
-  const inactiveTabClassName = '';
-  
+  const activeTabClassName = 'text-primary font-semibold border-b-2 border-primary';
+  const inactiveTabClassName = 'border-b-2 border-transparent';
+
   if (!tabs || tabs.length === 0) {
-    return null; // Or some placeholder/error message
+    return null;
   }
 
   return (
@@ -42,8 +42,8 @@ const Tabs: React.FC<TabsProps> = ({
         {tabs.map((tab) => (
           <Button
             key={tab.value}
-            variant="transparent" // Assuming a transparent variant exists for Button
-            className={`${activeTab === tab.value ? activeTabClassName : inactiveTabClassName}`}
+            variant="transparent"
+            className={`px-4 py-2 rounded-none ${activeTab === tab.value ? activeTabClassName : inactiveTabClassName}`}
             onClick={() => setActiveTab(tab.value)}
           >
             {tab.label}
