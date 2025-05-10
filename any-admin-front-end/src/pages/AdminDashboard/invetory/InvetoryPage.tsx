@@ -21,7 +21,6 @@ const InvetoryPage = () => {
   return (
     <>
       <ContainerBox>
-        <Title title="Inventario" style="PageTitle" />
         <Tabs tabs={tabItems} initialTab="bodega" />
       </ContainerBox>
     </>

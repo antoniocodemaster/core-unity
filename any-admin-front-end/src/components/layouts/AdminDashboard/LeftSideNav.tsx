@@ -16,7 +16,10 @@ const LeftSideNav = () => {
   const pathname = location.pathname;
 
   const getLinkClassName = (path: string) => {
-    return `dashboard-left-nav-link ${pathname === path ? 'active' : ''}`;
+    if (path === '/admin-dashboard') {
+      return `dashboard-left-nav-link ${pathname === path ? 'active' : ''}`;
+    }
+    return `dashboard-left-nav-link ${pathname.startsWith(path) ? 'active' : ''}`;
   };
 
   return (

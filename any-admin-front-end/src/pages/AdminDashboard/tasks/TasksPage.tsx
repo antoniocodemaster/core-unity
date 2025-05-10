@@ -26,12 +26,7 @@ const TasksPage = () => {
   return (
     <>
       <ContainerBox>
-        <Title title="Mis Tareas" style="PageTitle" />
-        <Text className="mb-8">
-          Aquí puedes ver todas tus tareas y gestionarlas.
-        </Text>
-
-        <Title title="Tareas" style="SectionTitle" />
+        <Title title="Lista de Tareas" style="SectionTitle" />
         <Table columns={columns} tableItems={tasks} options={options} />
         <Button className="mt-4" onClick={() => setIsUpsertTaskModalOpen(true)}>
           Agregar Tarea

@@ -1,5 +1,4 @@
 import Title from '../../../components/typography/Title';
-import Text from '../../../components/typography/Text';
 import ContainerBox from '../../../components/UI/ContainerBox';
 import { fakeContacts as contacts } from '../../../lib/fakes/contacts';
 import Table from '../../../components/UI/Table';
@@ -28,12 +27,7 @@ const ContactsPage = () => {
   return (
     <>
       <ContainerBox>
-        <Title title="Mis Contactos" style="PageTitle" />
-        <Text className="mb-8">
-          Aquí puedes ver todos tus contactos y gestionarlos.
-        </Text>
-
-        <Title title="Contactos" style="SectionTitle" />
+        <Title title="Lista de Contactos" style="SectionTitle" />
         <Table columns={columns} tableItems={contacts} options={options} />
         <Button
           className="mt-4"

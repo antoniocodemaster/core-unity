@@ -11,7 +11,7 @@ interface TabsProps {
   tabs: TabItem[];
   initialTab?: string;
   containerClassName?: string;
-  tabListClassName?: string;
+
   activeTabClassName?: string;
   inactiveTabClassName?: string;
   tabContentClassName?: string;
@@ -20,14 +20,17 @@ interface TabsProps {
 const Tabs: React.FC<TabsProps> = ({
   tabs,
   initialTab,
-  containerClassName = 'mt-8',
-  tabListClassName = 'flex border-b border-gray-200',
-  activeTabClassName = 'text-primary', // Assuming text-primary is your active color
-  inactiveTabClassName = '',
+  containerClassName = '',
   tabContentClassName = 'py-4',
 }) => {
-  const [activeTab, setActiveTab] = useState(initialTab || (tabs.length > 0 ? tabs[0].value : ''));
+  const [activeTab, setActiveTab] = useState(
+    initialTab || (tabs.length > 0 ? tabs[0].value : '')
+  );
 
+  const tabListClassName = 'flex border-b border-gray-200';
+  const activeTabClassName = 'text-primary';
+  const inactiveTabClassName = '';
+  
   if (!tabs || tabs.length === 0) {
     return null; // Or some placeholder/error message
   }
@@ -50,16 +53,17 @@ const Tabs: React.FC<TabsProps> = ({
 
       {/* Tab Content */}
       <div className={tabContentClassName}>
-        {tabs.map((tab) => (
-          activeTab === tab.value && (
-            <div key={tab.value} className="py-2 px-2">
-              {tab.content}
-            </div>
-          )
-        ))}
+        {tabs.map(
+          (tab) =>
+            activeTab === tab.value && (
+              <div key={tab.value} className="py-2 px-2">
+                {tab.content}
+              </div>
+            )
+        )}
       </div>
     </div>
   );
 };
 
-export default Tabs; 
+export default Tabs;
