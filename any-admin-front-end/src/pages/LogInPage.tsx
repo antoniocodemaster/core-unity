@@ -43,7 +43,7 @@ const LogInPage = () => {
           </div>
 
           <Title
-            title="Sign in to your Content Creator Templates account"
+            title="Inicia sesión en tu cuenta"
             style="SectionTitle"
           />
 
@@ -67,13 +67,13 @@ const LogInPage = () => {
             />
 
             <Button type="submit" variant="success">
-              Continue
+              Acceder
             </Button>
           </form>
           <Text className="mt-4">
-            Don't have an account?{' '}
-            <Link to="/login" className="text-success">
-              Sign up
+            No tienes una cuenta?{' '}
+            <Link to="/register" className="text-success">
+              Regístrate
             </Link>
           </Text>
         </div>
