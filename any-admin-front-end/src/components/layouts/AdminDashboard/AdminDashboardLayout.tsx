@@ -12,12 +12,12 @@ const AdminDashboardLayout = () => {
         <LeftSideNav />
 
         {/* Right Content */}
-        <div className="w-full">
+        <div className="w-full overflow-hidden">
           {/* Top Bar */}
           <AdminTopBar />
 
           {/* Main Content */}
-          <div className="p-4 min-h-screen">
+          <div className="p-4 min-h-screen pb-24 md:pb-4">
             <Outlet />
           </div>
         </div>
