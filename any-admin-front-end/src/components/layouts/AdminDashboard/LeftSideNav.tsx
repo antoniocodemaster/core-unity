@@ -1,13 +1,8 @@
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Title from '../../typography/Title';
-import {
-  HomeIcon,
-  PowerIcon,
-  UserGroupIcon,
-  ListBulletIcon,
-  CubeIcon,
-} from '@heroicons/react/24/outline';
+import { PowerIcon } from '@heroicons/react/24/outline';
 import useAuthState from '../../../lib/states/AuthState';
+import { getLinkClassName, navItems } from '../../../lib/utils/NavUtils';
 
 const LeftSideNav = () => {
   const navigate = useNavigate();
@@ -15,15 +10,8 @@ const LeftSideNav = () => {
   const location = useLocation();
   const pathname = location.pathname;
 
-  const getLinkClassName = (path: string) => {
-    if (path === '/admin-dashboard') {
-      return `dashboard-left-nav-link ${pathname === path ? 'active' : ''}`;
-    }
-    return `dashboard-left-nav-link ${pathname.startsWith(path) ? 'active' : ''}`;
-  };
-
   return (
-    <div className="w-52  bg-white shadow-md">
+    <div className="hidden md:block w-60 bg-white shadow-md">
       <Title
         title="AnyAdmin"
         className="pt-3 pb-2 text-center"
@@ -33,35 +21,16 @@ const LeftSideNav = () => {
       <hr className="mb-6" />
 
       <div className="w-[90%] mx-auto">
-        <Link
-          className={getLinkClassName('/admin-dashboard')}
-          to="/admin-dashboard"
-        >
-          <HomeIcon className="w-6 h-6" />
-          Inicio
-        </Link>
-
-        <Link
-          className={getLinkClassName('/admin-dashboard/contacts')}
-          to="/admin-dashboard/contacts"
-        >
-          <UserGroupIcon className="w-6 h-6" />
-          Contactos
-        </Link>
-        <Link
-          className={getLinkClassName('/admin-dashboard/tasks')}
-          to="/admin-dashboard/tasks"
-        >
-          <ListBulletIcon className="w-6 h-6" />
-          Tareas
-        </Link>
-        <Link
-          className={getLinkClassName('/admin-dashboard/inventory')}
-          to="/admin-dashboard/inventory"
-        >
-          <CubeIcon className="w-6 h-6" />
-          Inventario
-        </Link>
+        {navItems.map((item) => (
+          <Link
+            key={item.path}
+            className={getLinkClassName(item.path, pathname)}
+            to={item.path}
+          >
+            <item.icon className="w-6 h-6" />
+            {item.label}
+          </Link>
+        ))}
         <div
           className="dashboard-left-nav-link !ml-0 cursor-pointer"
           onClick={() => {

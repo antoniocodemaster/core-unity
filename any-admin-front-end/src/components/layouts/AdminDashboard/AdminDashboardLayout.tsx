@@ -3,6 +3,7 @@ import AdminTopBar from './AdminTopBar';
 import { Outlet } from 'react-router-dom';
 import UpsertContactsModal from '../../modals/UpsertContactsModal';
 import UpsertTasksModal from '../../modals/UpsertTasksModal';
+import MobileNavBar from './MobileNavBar';
 
 const AdminDashboardLayout = () => {
   return (
@@ -11,7 +12,7 @@ const AdminDashboardLayout = () => {
         <LeftSideNav />
 
         {/* Right Content */}
-        <div className="flex-1">
+        <div className="w-full">
           {/* Top Bar */}
           <AdminTopBar />
 
@@ -20,6 +21,8 @@ const AdminDashboardLayout = () => {
             <Outlet />
           </div>
         </div>
+
+        <MobileNavBar />
       </div>
 
       {/* Modals*/}

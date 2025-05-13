@@ -10,7 +10,15 @@ const ContainerGrid = ({
   gridType = 'row',
 }: ContainerGridProps) => {
   return (
-    <div className={`flex flex-${gridType} gap-4 ${className}`}>{children}</div>
+    <div
+      className={`flex ${
+        gridType === 'row'
+          ? 'flex-col md:flex-row'
+          : 'flex-col'
+      } gap-4 ${className}`}
+    >
+      {children}
+    </div>
   );
 };
 

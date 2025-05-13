@@ -6,9 +6,9 @@ interface ContainerBoxProps {
 
 const widthMap = {
   full: 'w-full',
-  half: 'w-1/2',
-  quarter: 'w-1/4',
-  'three-quarter': 'w-3/4',
+  half: 'w-full md:w-1/2',
+  quarter: 'w-full md:w-1/4',
+  'three-quarter': 'w-full md:w-3/4',
 } as const;
 
 const ContainerBox = ({
