@@ -6,6 +6,9 @@ import PrivateRoute from './PrivateRoute';
 import SingleContactPage from '../pages/AdminDashboard/contacts/SingleContactPage';
 import TasksPage from '../pages/AdminDashboard/tasks/TasksPage';
 import InvetoryPage from '../pages/AdminDashboard/invetory/InvetoryPage';
+import SettingsContactsPage from '../pages/AdminDashboard/settings/SettingsContactsPage';
+import SettingsTasksPage from '../pages/AdminDashboard/settings/SettingsTasksPage';
+import SettingsInventoryPage from '../pages/AdminDashboard/settings/SettingsInventoryPage';
 
 const adminDashboardRoutes = {
   path: '/admin-dashboard',
@@ -38,6 +41,19 @@ const adminDashboardRoutes = {
     {
       path: 'inventory',
       element: <InvetoryPage />,
+    },
+    // Settings
+    {
+      path: 'settings/contacts',
+      element: <SettingsContactsPage />,
+    },
+    {
+      path: 'settings/tasks',
+      element: <SettingsTasksPage />,
+    },
+    {
+      path: 'settings/inventory',
+      element: <SettingsInventoryPage />,
     },
   ],
 };
