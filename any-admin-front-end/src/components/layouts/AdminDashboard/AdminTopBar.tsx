@@ -15,12 +15,14 @@ const pageTitle = {
   '/admin-dashboard/settings/contacts': 'Configuración de Contactos',
   '/admin-dashboard/settings/tasks': 'Configuración de Tareas',
   '/admin-dashboard/settings/inventory': 'Configuración de Inventario',
+  '/admin-dashboard/point-of-sales': 'Punto de Venta',
 };
 
 const settingsPage = {
   '/admin-dashboard/contacts': '/admin-dashboard/settings/contacts',
   '/admin-dashboard/tasks': '/admin-dashboard/settings/tasks',
   '/admin-dashboard/inventory': '/admin-dashboard/settings/inventory',
+  '/admin-dashboard/point-of-sales': '/admin-dashboard/settings/point-of-sales',
 };
 
 const AdminTopBar = () => {

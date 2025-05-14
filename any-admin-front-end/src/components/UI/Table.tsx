@@ -13,7 +13,7 @@ interface TableProps {
 
 const Table = ({ columns, tableItems, options }: TableProps) => (
   <div className="w-full overflow-x-auto">
-    <table className="min-w-full divide-y divide-gray-200 border border-gray-300 rounded-md overflow-hidden">
+    <table className="min-w-full divide-y divide-gray-200 border border-gray-300 rounded-sm overflow-hidden">
       {/* Table header */}
       <thead className="bg-primary">
         <tr>

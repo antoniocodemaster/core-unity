@@ -3,6 +3,8 @@ import {
   UserGroupIcon,
   ListBulletIcon,
   CubeIcon,
+  BuildingStorefrontIcon,
+  BanknotesIcon,
 } from '@heroicons/react/24/outline';
 
 export const navItems = [
@@ -25,6 +27,16 @@ export const navItems = [
     label: 'Inventario',
     icon: CubeIcon,
     path: '/admin-dashboard/inventory',
+  },
+  {
+    label: 'Punto de Venta',
+    icon: BuildingStorefrontIcon,
+    path: '/admin-dashboard/point-of-sales',
+  },
+  {
+    label: 'Nómina',
+    icon: BanknotesIcon,
+    path: '/admin-dashboard/payroll',
   },
 ];
 
