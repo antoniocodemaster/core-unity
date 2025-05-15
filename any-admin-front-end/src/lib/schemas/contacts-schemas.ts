@@ -9,6 +9,11 @@ export const contactSchema = z.object({
   correoElectronico: z
     .string()
     .min(1, { message: 'Correo electrónico es requerido' }),
+  direccion: z.string().optional(),
+  ciudad: z.string().optional(),
+  estado: z.string().optional(),
+  codigoPostal: z.string().optional(),
+  pais: z.string().optional(),
 });
 
 export type ContactSchema = z.infer<typeof contactSchema>;

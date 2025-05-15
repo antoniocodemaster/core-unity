@@ -5,6 +5,7 @@ import {
   CubeIcon,
   BuildingStorefrontIcon,
   BanknotesIcon,
+  ClipboardDocumentListIcon,
 } from '@heroicons/react/24/outline';
 
 export const navItems = [
@@ -35,8 +36,13 @@ export const navItems = [
   },
   {
     label: 'Nómina',
-    icon: BanknotesIcon,
+    icon: ClipboardDocumentListIcon,
     path: '/admin-dashboard/payroll',
+  },
+  {
+    label: 'Finanzas',
+    icon: BanknotesIcon,
+    path: '/admin-dashboard/finances',
   },
 ];
 

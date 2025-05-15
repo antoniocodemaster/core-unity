@@ -13,6 +13,7 @@ import SettingsInventoryPage from '../pages/AdminDashboard/settings/SettingsInve
 import PointOfSalesPage from '../pages/AdminDashboard/point-of-sales/PointOfSalesPage';
 import SinglePointOfSalesPage from '../pages/AdminDashboard/point-of-sales/SinglePointOfSalesPage';
 import PayrollPage from '../pages/AdminDashboard/payroll/PayrollPage';
+import FinancesPage from '../pages/AdminDashboard/finances/FinancesPage';
 
 const adminDashboardRoutes = {
   path: '/admin-dashboard',
@@ -63,6 +64,11 @@ const adminDashboardRoutes = {
     {
       path: 'payroll',
       element: <PayrollPage />,
+    },
+    // Finances
+    {
+      path: 'finances',
+      element: <FinancesPage />,
     },
     // Settings
     {

@@ -44,3 +44,22 @@ html {
 a {
     @apply transition-all duration-300 hover:opacity-70 hover:underline;
 }
+
+/* scroll bars */
+.scroll-visible {
+    overflow-y: scroll;
+}
+
+/* Personalizar el scrollbar */
+.scroll-visible::-webkit-scrollbar {
+    width: 4px;
+}
+
+.scroll-visible::-webkit-scrollbar-thumb {
+    background-color: #4b66a5;
+    border-radius: 4px;
+}
+
+.scroll-visible::-webkit-scrollbar-track {
+    background: transparent;
+}

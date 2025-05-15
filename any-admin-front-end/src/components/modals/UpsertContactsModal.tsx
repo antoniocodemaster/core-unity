@@ -29,6 +29,7 @@ const UpsertContactsModal = () => {
       isOpen={isUpsertContactModalOpen}
       onClose={() => setIsUpsertContactModalOpen(false)}
       title="Agregar Contacto"
+      size="medium"
     >
       <UpsertContactsForm ref={formRef} onSubmit={handleFormSubmit} />
 

@@ -21,14 +21,14 @@ const InputText: React.FC<InputTextProps> = ({
   onChange,
 }) => {
   return (
-    <div className="mb-4">
+    <div className="mb-2">
       {label && <label className="block text-gray-700">{label}</label>}
       <input
         type={type}
         placeholder={placeholder}
         className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         {...register(name)}
-        onChange={onChange}
+        {...(onChange ? { onChange } : {})}
       />
       {error && <Text style="error">{error}</Text>}
     </div>
