@@ -14,6 +14,8 @@ export const contactSchema = z.object({
   estado: z.string().optional(),
   codigoPostal: z.string().optional(),
   pais: z.string().optional(),
+  tipoContacto: z.string().optional(),
+  notas: z.string().optional(),
 });
 
 export type ContactSchema = z.infer<typeof contactSchema>;

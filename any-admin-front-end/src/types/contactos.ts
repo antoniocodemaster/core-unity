@@ -14,6 +14,7 @@ export type Contacto = {
   fechaActualizacion: string;
   estaActivo: boolean;
   tipoContacto: TipoContacto;
+  notas: string;
 };
 
 export type TipoContacto = 'cliente' | 'proveedor' | 'otro';

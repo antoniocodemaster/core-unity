@@ -25,6 +25,8 @@ const UpsertContactsForm = forwardRef<HTMLFormElement, UpsertContactsFormProps>(
         estado: '',
         codigoPostal: '',
         pais: '',
+        tipoContacto: '',
+        notas: '',
       },
     });
 
@@ -74,7 +76,7 @@ const UpsertContactsForm = forwardRef<HTMLFormElement, UpsertContactsFormProps>(
           <InputText
             name="streetAddress"
             label="Dirección"
-            type="text"
+            type="email"
             placeholder="Direccion de contacto"
             register={contactForm.register}
             error={contactForm.formState.errors.direccion?.message}
@@ -87,6 +89,29 @@ const UpsertContactsForm = forwardRef<HTMLFormElement, UpsertContactsFormProps>(
             placeholder="Enter your city"
             register={contactForm.register}
             error={contactForm.formState.errors.ciudad?.message}
+          />
+
+          <InputText
+            name="tipoContacto"
+            label="Tipo de contacto"
+            type="select"
+            placeholder="Enter your state"
+            register={contactForm.register}
+            options={[
+              { label: 'Cliente', value: 'cliente' },
+              { label: 'Proveedor', value: 'proveedor' },
+              { label: 'Otro', value: 'otro' },
+            ]}
+            error={contactForm.formState.errors.tipoContacto?.message}
+          />
+
+          <InputText
+            name="notas"
+            label="Notas"
+            type="textarea"
+            placeholder="Enter your notes"
+            register={contactForm.register}
+            error={contactForm.formState.errors.notas?.message}
           />
         </TwoRowsFieldContainer>
       </form>
