@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
-import { loginWithCredentialsApi } from '../../api/AuthApi';
+import { loginWithCredentialsApi } from '../../api/auth-api';
 
 interface AuthState {
   token: string | null;

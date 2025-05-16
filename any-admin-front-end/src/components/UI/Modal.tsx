@@ -9,8 +9,8 @@ interface ModalProps {
   size?: 'small' | 'medium' | 'large';
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title, size = 'medium' }) => {
-  if (!isOpen) return null;
+function Modal({ isOpen, onClose, children, title, size = 'medium' }: ModalProps) {
+  const [shouldRender, setShouldRender] = React.useState(false);
 
   const modalSize = {
     small: 'max-w-xl w-[95%]',
@@ -20,15 +20,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title, size = 
 
   useEffect(() => {
     if (isOpen) {
+      setShouldRender(true);
       document.body.classList.add('overflow-hidden');
     } else {
       document.body.classList.remove('overflow-hidden');
+      setShouldRender(false);
     }
-
-    return () => {
-      document.body.classList.remove('overflow-hidden');
-    };
   }, [isOpen]);
+
+  if (!shouldRender) return null;
 
   return (
     <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center">
@@ -43,6 +43,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title, size = 
       </div>
     </div>
   );
-};
+}
 
 export default Modal;

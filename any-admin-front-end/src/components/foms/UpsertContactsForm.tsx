@@ -20,9 +20,6 @@ const formDefaultValues = {
   correoElectronico: '',
   direccion: '',
   ciudad: '',
-  estado: '',
-  codigoPostal: '',
-  pais: '',
   tipoContacto: '',
   notas: '',
 };
@@ -34,11 +31,20 @@ const UpsertContactsForm = forwardRef<HTMLFormElement, UpsertContactsFormProps>(
       defaultValues: formDefaultValues,
     });
 
+    const {
+      selectedContact,
+      isUpsertContactModalOpen,
+      setSelectedContact,
+    } = useContactsState();
+
     const handleSubmit = (data: ContactSchema) => {
       onSubmit(data);
     };
 
-    const { selectedContact, isUpsertContactModalOpen, setIsUpsertContactModalOpen } = useContactsState();
+    const handleFormReset = () => {
+      contactForm.reset(formDefaultValues);
+      setSelectedContact(null);
+    };
 
     useEffect(() => {
       if (selectedContact) {
@@ -47,11 +53,8 @@ const UpsertContactsForm = forwardRef<HTMLFormElement, UpsertContactsFormProps>(
     }, [selectedContact]);
 
     useEffect(() => {
-      console.log('isUpsertContactModalOpen', isUpsertContactModalOpen);
-      if (!isUpsertContactModalOpen) {
-        contactForm.reset(formDefaultValues);
-      }
-    }, [isUpsertContactModalOpen, setIsUpsertContactModalOpen]);
+      if (!isUpsertContactModalOpen) handleFormReset();
+    }, [isUpsertContactModalOpen]);
 
     return (
       <form ref={ref} onSubmit={contactForm.handleSubmit(handleSubmit)}>
@@ -93,16 +96,16 @@ const UpsertContactsForm = forwardRef<HTMLFormElement, UpsertContactsFormProps>(
           />
 
           <InputText
-            name="streetAddress"
+            name="direccion"
             label="Dirección"
-            type="email"
+            type="text"
             placeholder="Direccion de contacto"
             register={contactForm.register}
             error={contactForm.formState.errors.direccion?.message}
           />
 
           <InputText
-            name="city"
+            name="ciudad"
             label="Ciudad"
             type="text"
             placeholder="Enter your city"
