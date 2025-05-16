@@ -36,7 +36,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title, size = 
         <div onClick={onClose} className="round-button">
           X
         </div>
-        <div className="max-h-[90vh] overflow-y-auto py-8 scroll-visible pr-3">
+        <div className="max-h-[90vh] overflow-y-auto py-8 scroll-visible-y pr-3">
           {title && <Title className="mb-8" title={title} />}
           {children}
         </div>

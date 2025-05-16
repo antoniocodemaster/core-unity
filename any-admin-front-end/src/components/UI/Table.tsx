@@ -12,7 +12,7 @@ interface TableProps {
 }
 
 const Table = ({ columns, tableItems, options }: TableProps) => (
-  <div className="w-full overflow-x-auto">
+  <div className="w-full overflow-x-auto scroll-visible-x">
     <table className="min-w-full divide-y divide-gray-200 border border-gray-300 rounded-sm overflow-hidden">
       {/* Table header */}
       <thead className="bg-primary">
@@ -20,7 +20,7 @@ const Table = ({ columns, tableItems, options }: TableProps) => (
           {columns.map((column, i) => (
             <th
               key={i}
-              className="px-4 py-2 text-left text-sm font-semibold text-white border-b"
+              className="px-4 py-2 text-left text-sm font-semibold text-white border-b text-nowrap"
             >
               {column.label}
             </th>
@@ -41,7 +41,9 @@ const Table = ({ columns, tableItems, options }: TableProps) => (
                 {item[column.key]}
               </td>
             ))}
-            {(options?.viewItem || options?.editItem || options?.deleteItem) && (
+            {(options?.viewItem ||
+              options?.editItem ||
+              options?.deleteItem) && (
               <td className="px-4 py-2 text-sm text-gray-800 border-b">
                 <div className="flex items-center gap-2">
                   {options?.viewItem && (

@@ -55,7 +55,10 @@ const AdminTopBar = () => {
       <div className="mr-auto pl-[5px] flex items-center gap-2">
         <Title title={getCurrentPageTitle()} style="PageTitle" />
         {getCurrentSettingsPage() && (
-          <NavLink to={getCurrentSettingsPage() || ''}>
+          <NavLink
+            to={getCurrentSettingsPage() || ''}
+            className="hidden md:block"
+          >
             <Cog8ToothIcon className="w-6 h-6" />
           </NavLink>
         )}

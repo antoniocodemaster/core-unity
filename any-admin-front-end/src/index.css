@@ -46,20 +46,38 @@ a {
 }
 
 /* scroll bars */
-.scroll-visible {
+.scroll-visible-x,
+.scroll-visible-mobile-menu {
+    overflow-x: scroll;
+}
+
+.scroll-visible-y {
     overflow-y: scroll;
 }
 
 /* Personalizar el scrollbar */
-.scroll-visible::-webkit-scrollbar {
+.scroll-visible-x::-webkit-scrollbar,
+.scroll-visible-mobile-menu::-webkit-scrollbar {
+    height: 4px;
+}
+
+.scroll-visible-y::-webkit-scrollbar {
     width: 4px;
 }
 
-.scroll-visible::-webkit-scrollbar-thumb {
+.scroll-visible-x::-webkit-scrollbar-thumb,
+.scroll-visible-y::-webkit-scrollbar-thumb {
     background-color: #4b66a5;
     border-radius: 4px;
 }
 
-.scroll-visible::-webkit-scrollbar-track {
+.scroll-visible-mobile-menu::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.scroll-visible-x::-webkit-scrollbar-track,
+.scroll-visible-y::-webkit-scrollbar-track,
+.scroll-visible-mobile-menu::-webkit-scrollbar-track {
     background: transparent;
 }
