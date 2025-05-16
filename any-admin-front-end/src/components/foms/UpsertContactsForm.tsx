@@ -5,8 +5,10 @@ import {
   ContactSchema,
 } from '../../lib/schemas/contacts-schemas';
 import InputText from '../UI/InputText';
-import { forwardRef } from 'react';
+import { forwardRef, useEffect } from 'react';
 import TwoRowsFieldContainer from '../UI/TwoRowsFieldContainer';
+import useContactsState from '../../lib/states/ContactsState';
+
 interface UpsertContactsFormProps {
   onSubmit: (data: ContactSchema) => void;
 }
@@ -16,7 +18,7 @@ const UpsertContactsForm = forwardRef<HTMLFormElement, UpsertContactsFormProps>(
     const contactForm = useForm<ContactSchema>({
       resolver: zodResolver(contactSchema),
       defaultValues: {
-        nombre: '',
+        primerNombre: '',
         apellido: '',
         telefonoPrincipal: '',
         correoElectronico: '',
@@ -34,16 +36,24 @@ const UpsertContactsForm = forwardRef<HTMLFormElement, UpsertContactsFormProps>(
       onSubmit(data);
     };
 
+    const { selectedContact } = useContactsState();
+
+    useEffect(() => {
+      if (selectedContact) {
+        contactForm.reset(selectedContact);
+      }
+    }, [selectedContact]);
+
     return (
       <form ref={ref} onSubmit={contactForm.handleSubmit(handleSubmit)}>
         <TwoRowsFieldContainer>
           <InputText
-            name="nombre"
+            name="primerNombre"
             label="Nombre"
             type="text"
             placeholder="Enter your name"
             register={contactForm.register}
-            error={contactForm.formState.errors.nombre?.message}
+            error={contactForm.formState.errors.primerNombre?.message}
           />
 
           <InputText

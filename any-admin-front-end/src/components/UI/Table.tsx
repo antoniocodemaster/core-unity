@@ -6,8 +6,8 @@ interface TableProps {
   tableItems: any[];
   options?: {
     viewItem?: string;
-    editItem?: boolean;
-    deleteItem?: boolean;
+    editItem?: (item: any) => void;
+    deleteItem?: (item: any) => void;
   };
 }
 
@@ -54,12 +54,22 @@ const Table = ({ columns, tableItems, options }: TableProps) => (
                     </Link>
                   )}
                   {options?.editItem && (
-                    <Button variant="transparent" className="text-warning">
+                    <Button
+                      variant="transparent" 
+                      className="text-warning"
+                      onClick={() => options.editItem && options.editItem(item)}
+                    >
                       Editar
                     </Button>
                   )}
                   {options?.deleteItem && (
-                    <Button variant="transparent" className="text-danger">
+                    <Button
+                      variant="transparent"
+                      className="text-danger"
+                      onClick={() =>
+                        options.deleteItem && options.deleteItem(item)
+                      }
+                    >
                       Eliminar
                     </Button>
                   )}

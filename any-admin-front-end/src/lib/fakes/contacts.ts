@@ -17,6 +17,7 @@ export const fakeContacts: Contact[] = [
     fechaActualizacion: '2023-03-15',
     estaActivo: true,
     tipoContacto: 'cliente',
+    notas: 'Notas de la persona',
   },
   {
     id: '2',
@@ -34,6 +35,7 @@ export const fakeContacts: Contact[] = [
     fechaActualizacion: '2023-04-01',
     estaActivo: true,
     tipoContacto: 'proveedor',
+    notas: 'Notas de la persona',
   },
   {
     id: '3',
@@ -51,6 +53,7 @@ export const fakeContacts: Contact[] = [
     fechaActualizacion: '2023-01-15',
     estaActivo: false,
     tipoContacto: 'otro',
+    notas: 'Notas de la persona',
   },
   {
     id: '4',
@@ -68,6 +71,7 @@ export const fakeContacts: Contact[] = [
     fechaActualizacion: '2023-05-22',
     estaActivo: true,
     tipoContacto: 'cliente',
+    notas: 'Notas de la persona',
   },
   {
     id: '5',
@@ -85,6 +89,7 @@ export const fakeContacts: Contact[] = [
     fechaActualizacion: '2023-03-08',
     estaActivo: true,
     tipoContacto: 'proveedor',
+    notas: 'Notas de la persona',
   },
   {
     id: '6',
@@ -102,6 +107,7 @@ export const fakeContacts: Contact[] = [
     fechaActualizacion: '2023-01-09',
     estaActivo: false,
     tipoContacto: 'otro',
+    notas: 'Notas de la persona',
   },
   {
     id: '7',
@@ -119,6 +125,7 @@ export const fakeContacts: Contact[] = [
     fechaActualizacion: '2023-03-15',
     estaActivo: true,
     tipoContacto: 'cliente',
+    notas: 'Notas de la persona',
   },
   {
     id: '8',
@@ -136,6 +143,7 @@ export const fakeContacts: Contact[] = [
     fechaActualizacion: '2023-04-02',
     estaActivo: true,
     tipoContacto: 'proveedor',
+    notas: 'Notas de la persona',
   },
   {
     id: '9',
@@ -153,6 +161,7 @@ export const fakeContacts: Contact[] = [
     fechaActualizacion: '2023-02-01',
     estaActivo: false,
     tipoContacto: 'otro',
+    notas: 'Notas de la persona',
   },
   {
     id: '10',
@@ -170,5 +179,6 @@ export const fakeContacts: Contact[] = [
     fechaActualizacion: '2023-05-01',
     estaActivo: true,
     tipoContacto: 'cliente',
+    notas: 'Notas de la persona',
   },
 ];

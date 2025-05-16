@@ -6,7 +6,8 @@ import Button from '../../../components/UI/Button';
 import useContactsState from '../../../lib/states/ContactsState';
 
 const ContactsPage = () => {
-  const { setIsUpsertContactModalOpen } = useContactsState();
+  const { setIsUpsertContactModalOpen, setSelectedContact } =
+    useContactsState();
 
   const columns = [
     { key: 'primerNombre', label: 'Nombre' },
@@ -20,8 +21,14 @@ const ContactsPage = () => {
 
   const options = {
     viewItem: '/admin-dashboard/contacts',
-    editItem: true,
-    deleteItem: true,
+    editItem: (item: any) => {
+      console.log('editItem', item);
+      setSelectedContact(item);
+      setIsUpsertContactModalOpen(true);
+    },
+    deleteItem: (item: any) => {
+      console.log('deleteItem', item);
+    },
   };
 
   return (
