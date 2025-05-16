@@ -81,3 +81,20 @@ a {
 .scroll-visible-mobile-menu::-webkit-scrollbar-track {
     background: transparent;
 }
+
+/* Sweet alert */
+.swal2-icon.swal2-warning {
+    border-color: #d09545 !important;
+    color: #d09545 !important;
+}
+
+.swal2-icon.swal2-success {
+    border-color: #54aa76 !important;
+    color: #54aa76 !important;
+}
+
+.swal2-icon.swal2-error {
+    border-color: #f55a4d !important;
+    color: #f55a4d !important;
+}
+

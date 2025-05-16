@@ -13,36 +13,45 @@ interface UpsertContactsFormProps {
   onSubmit: (data: ContactSchema) => void;
 }
 
+const formDefaultValues = {
+  primerNombre: '',
+  apellido: '',
+  telefonoPrincipal: '',
+  correoElectronico: '',
+  direccion: '',
+  ciudad: '',
+  estado: '',
+  codigoPostal: '',
+  pais: '',
+  tipoContacto: '',
+  notas: '',
+};
+
 const UpsertContactsForm = forwardRef<HTMLFormElement, UpsertContactsFormProps>(
   ({ onSubmit }, ref) => {
     const contactForm = useForm<ContactSchema>({
       resolver: zodResolver(contactSchema),
-      defaultValues: {
-        primerNombre: '',
-        apellido: '',
-        telefonoPrincipal: '',
-        correoElectronico: '',
-        direccion: '',
-        ciudad: '',
-        estado: '',
-        codigoPostal: '',
-        pais: '',
-        tipoContacto: '',
-        notas: '',
-      },
+      defaultValues: formDefaultValues,
     });
 
     const handleSubmit = (data: ContactSchema) => {
       onSubmit(data);
     };
 
-    const { selectedContact } = useContactsState();
+    const { selectedContact, isUpsertContactModalOpen, setIsUpsertContactModalOpen } = useContactsState();
 
     useEffect(() => {
       if (selectedContact) {
         contactForm.reset(selectedContact);
       }
     }, [selectedContact]);
+
+    useEffect(() => {
+      console.log('isUpsertContactModalOpen', isUpsertContactModalOpen);
+      if (!isUpsertContactModalOpen) {
+        contactForm.reset(formDefaultValues);
+      }
+    }, [isUpsertContactModalOpen, setIsUpsertContactModalOpen]);
 
     return (
       <form ref={ref} onSubmit={contactForm.handleSubmit(handleSubmit)}>
