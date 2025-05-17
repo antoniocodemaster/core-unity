@@ -58,7 +58,7 @@ const LandingPage = () => {
               Contáctenos
             </button>
             <a
-              href="http://localhost:4000/admin-dashboard/"
+              href="http://localhost:4000/admin-dashboard"
               className="hover:underline"
             >
               AdminZone
@@ -128,7 +128,7 @@ const LandingPage = () => {
               Contáctenos
             </button>
             <a
-              href="http://localhost:4000/admin-dashboard/"
+              href="http://localhost:4000/admin-dashboard"
               className="block w-full text-left"
             >
               AdminZone
