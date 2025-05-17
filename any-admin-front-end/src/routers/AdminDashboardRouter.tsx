@@ -14,6 +14,7 @@ import PointOfSalesPage from '../pages/AdminDashboard/point-of-sales/PointOfSale
 import SinglePointOfSalesPage from '../pages/AdminDashboard/point-of-sales/SinglePointOfSalesPage';
 import PayrollPage from '../pages/AdminDashboard/payroll/PayrollPage';
 import FinancesPage from '../pages/AdminDashboard/finances/FinancesPage';
+import SingleTaskPage from '../pages/AdminDashboard/tasks/SingleTaskPage';
 
 const adminDashboardRoutes = {
   path: '/admin-dashboard',
@@ -41,6 +42,10 @@ const adminDashboardRoutes = {
     {
       path: 'tasks',
       element: <TasksPage />,
+    },
+    {
+      path: 'tasks/:id',
+      element: <SingleTaskPage />,
     },
     // Inventory
     {

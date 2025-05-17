@@ -9,10 +9,6 @@ import { forwardRef, useEffect } from 'react';
 import TwoRowsFieldContainer from '../UI/TwoRowsFieldContainer';
 import useContactsState from '../../lib/states/ContactsState';
 
-interface UpsertContactsFormProps {
-  onSubmit: (data: ContactSchema) => void;
-}
-
 const formDefaultValues = {
   primerNombre: '',
   apellido: '',
@@ -24,6 +20,10 @@ const formDefaultValues = {
   notas: '',
 };
 
+interface UpsertContactsFormProps {
+  onSubmit: (data: ContactSchema) => void;
+}
+
 const UpsertContactsForm = forwardRef<HTMLFormElement, UpsertContactsFormProps>(
   ({ onSubmit }, ref) => {
     const contactForm = useForm<ContactSchema>({
@@ -31,11 +31,8 @@ const UpsertContactsForm = forwardRef<HTMLFormElement, UpsertContactsFormProps>(
       defaultValues: formDefaultValues,
     });
 
-    const {
-      selectedContact,
-      isUpsertContactModalOpen,
-      setSelectedContact,
-    } = useContactsState();
+    const { selectedContact, isUpsertContactModalOpen, setSelectedContact } =
+      useContactsState();
 
     const handleSubmit = (data: ContactSchema) => {
       onSubmit(data);

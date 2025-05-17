@@ -58,7 +58,9 @@ const Table = ({ columns, tableItems, options }: TableProps) => {
                   key={j}
                   className="px-4 py-2 text-sm text-gray-800 border-b"
                 >
-                  {item[column.key]}
+                  {Array.isArray(item[column.key])
+                    ? item[column.key].join(', ')
+                    : item[column.key]}
                 </td>
               ))}
               {(options?.viewItem ||

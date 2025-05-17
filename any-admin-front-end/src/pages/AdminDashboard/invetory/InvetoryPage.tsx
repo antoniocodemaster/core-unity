@@ -2,24 +2,7 @@ import Title from '../../../components/typography/Title';
 import ContainerBox from '../../../components/UI/ContainerBox';
 import { Link } from 'react-router-dom';
 import Text from '../../../components/typography/Text';
-
-const stores = [
-  {
-    id: '1',
-    name: 'Tienda 1',
-    address: '123 Main St, Anytown, USA',
-  },
-  {
-    id: '2',
-    name: 'Tienda 2',
-    address: '456 Main St, Anytown, USA',
-  },
-  {
-    id: '3',
-    name: 'Tienda 3',
-    address: '789 Main St, Anytown, USA',
-  },
-];
+import { stores } from '../../../lib/fakes/stores';
 
 const InvetoryPage = () => {
   return (

@@ -7,7 +7,7 @@ import Button from '../../../components/UI/Button';
 import useTasksState from '../../../lib/states/TasksState';
 
 const TasksPage = () => {
-  const { setIsUpsertTaskModalOpen } = useTasksState();
+  const { setIsUpsertTaskModalOpen, setSelectedTask } = useTasksState();
 
   const columns = [
     { key: 'titulo', label: 'Título' },
@@ -19,8 +19,13 @@ const TasksPage = () => {
 
   const options = {
     viewItem: '/admin-dashboard/tasks',
-    editItem: true,
-    deleteItem: true,
+    editItem: (item: any) => {
+      setSelectedTask(item);
+      setIsUpsertTaskModalOpen(true);
+    },
+    deleteItem: (item: any) => {
+      console.log('deleteItem', item);
+    },
   };
 
   return (

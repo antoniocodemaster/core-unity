@@ -2,8 +2,10 @@ import LeftSideNav from './LeftSideNav';
 import AdminTopBar from './AdminTopBar';
 import { Outlet } from 'react-router-dom';
 import UpsertContactsModal from '../../modals/UpsertContactsModal';
+// Import modals
 import UpsertTasksModal from '../../modals/UpsertTasksModal';
 import MobileNavBar from './MobileNavBar';
+import ProcessSalesModal from '../../modals/ProcessSalesModal';
 
 const AdminDashboardLayout = () => {
   return (
@@ -28,6 +30,7 @@ const AdminDashboardLayout = () => {
       {/* Modals*/}
       <UpsertContactsModal />
       <UpsertTasksModal />
+      <ProcessSalesModal />
     </>
   );
 };

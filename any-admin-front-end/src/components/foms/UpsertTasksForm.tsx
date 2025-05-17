@@ -2,7 +2,13 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { TasksSchema, tasksSchema } from '../../lib/schemas/tasks-schemas';
 import InputText from '../UI/InputText';
-import { forwardRef } from 'react';
+import { forwardRef, useEffect } from 'react';
+import useTasksState from '../../lib/states/TasksState';
+
+const formDefaultValues = {
+  titulo: '',
+  descripcion: '',
+};
 
 interface UpsertTasksFormProps {
   onSubmit: (data: TasksSchema) => void;
@@ -12,15 +18,30 @@ const UpsertTasksForm = forwardRef<HTMLFormElement, UpsertTasksFormProps>(
   ({ onSubmit }, ref) => {
     const taskForm = useForm<TasksSchema>({
       resolver: zodResolver(tasksSchema),
-      defaultValues: {
-        titulo: '',
-        descripcion: '',
-      },
+      defaultValues: formDefaultValues,
     });
+
+    const { selectedTask, isUpsertTaskModalOpen, setSelectedTask } =
+      useTasksState();
 
     const handleSubmit = (data: TasksSchema) => {
       onSubmit(data);
     };
+
+    const handleFormReset = () => {
+      taskForm.reset(formDefaultValues);
+      setSelectedTask(null);
+    };
+
+    useEffect(() => {
+      if (selectedTask) {
+        taskForm.reset(selectedTask);
+      }
+    }, [selectedTask]);
+
+    useEffect(() => {
+      if (!isUpsertTaskModalOpen) handleFormReset();
+    }, [isUpsertTaskModalOpen]);
 
     return (
       <form ref={ref} onSubmit={taskForm.handleSubmit(handleSubmit)}>

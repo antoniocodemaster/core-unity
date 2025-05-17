@@ -1,5 +1,6 @@
 import Table from '../UI/Table';
 import { wharehouseProducts } from '../../lib/fakes/wharehouse-products';
+import Button from '../UI/Button';
 
 const WarehouseTab = () => {
   return (
@@ -12,6 +13,9 @@ const WarehouseTab = () => {
         ]}
         tableItems={wharehouseProducts}
       />
+      <Button className="mt-4" onClick={() => console.log('Agregar Producto')}>
+        Agregar Producto
+      </Button>
     </>
   );
 };
